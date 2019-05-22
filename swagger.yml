@@ -1,0 +1,46 @@
+openapi: "3.0.0"
+
+info:
+  title: PoetryLab
+  version: "1.0"
+servers:
+  - url: http://localhost:5000/
+
+paths:
+  /analysis:
+    post:
+      summary: Analyses a poem
+      requestBody:
+        content:
+          text/plain:
+            schema:
+              x-body-name: poem
+              type: string
+              format: text
+            example: |+
+              Jamás encontraré más fiel ami-
+              go que en los peores momentos arrime
+              y no me trae mi verde
+              abrigo que su cuerpo a mi alma abatida y anime
+              dándome el calor del mejor abrigo.
+      description: Gets enjambent and scansion info for the poem
+      operationId: api.get_analysis
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                example: {"scansion": [{"tokens": [{"word": [{"syllable": "Ja", "is_stressed": false}, {"syllable": "m\\u00e1s", "is_stressed": true}], "stress_position": -1}, {"word": [{"syllable": "en", "is_stressed": false, "has_sinaeresis": true}, {"syllable": "con", "is_stressed": false}, {"syllable": "tra", "is_stressed": false}, {"syllable": "r\\u00e9", "is_stressed": true}], "stress_position": -1}, {"word": [{"syllable": "m\\u00e1s", "is_stressed": true}], "stress_position": -1}, {"word": [{"syllable": "fiel", "is_stressed": true}], "stress_position": -1}, {"symbol": "ami-"}]}, {"tokens": [{"word": [{"syllable": "go", "is_stressed": true}], "stress_position": -1}, {"word": [{"syllable": "que", "is_stressed": false, "has_synalepha": true}], "stress_position": 0}, {"word": [{"syllable": "en", "is_stressed": true}], "stress_position": -1}, {"word": [{"syllable": "los", "is_stressed": false}], "stress_position": 0}, {"word": [{"syllable": "pe", "is_stressed": false, "has_sinaeresis": true}, {"syllable": "o", "is_stressed": true}, {"syllable": "res", "is_stressed": false}], "stress_position": -2}, {"word": [{"syllable": "mo", "is_stressed": false}, {"syllable": "men", "is_stressed": true}, {"syllable": "tos", "is_stressed": false}], "stress_position": -2}, {"word": [{"syllable": "a", "is_stressed": false, "has_sinaeresis": true}, {"syllable": "rri", "is_stressed": true}, {"syllable": "me", "is_stressed": false}], "stress_position": -2}]}, {"tokens": [{"word": [{"syllable": "y", "is_stressed": true}], "stress_position": -1}, {"word": [{"syllable": "no", "is_stressed": true}], "stress_position": -1}, {"word": [{"syllable": "me", "is_stressed": false}], "stress_position": 0}, {"word": [{"syllable": "tra", "is_stressed": true, "has_sinaeresis": true}, {"syllable": "e", "is_stressed": false}], "stress_position": -2}, {"word": [{"syllable": "mi", "is_stressed": false}], "stress_position": 0}, {"word": [{"syllable": "ver", "is_stressed": true}, {"syllable": "de", "is_stressed": false}], "stress_position": -2}]}, {"tokens": [{"word": [{"syllable": "a", "is_stressed": false, "has_sinaeresis": true}, {"syllable": "bri", "is_stressed": true}, {"syllable": "go", "is_stressed": false}], "stress_position": -2}, {"word": [{"syllable": "que", "is_stressed": false}], "stress_position": 0}, {"word": [{"syllable": "su", "is_stressed": false}], "stress_position": 0}, {"word": [{"syllable": "cuer", "is_stressed": true}, {"syllable": "po", "is_stressed": false, "has_synalepha": true}], "stress_position": -2}, {"word": [{"syllable": "a", "is_stressed": true, "has_sinaeresis": true}], "stress_position": -1}, {"word": [{"syllable": "mi", "is_stressed": false, "has_synalepha": true}], "stress_position": 0}, {"word": [{"syllable": "al", "is_stressed": true, "has_sinaeresis": true}, {"syllable": "ma", "is_stressed": false, "has_synalepha": true}], "stress_position": -2}, {"word": [{"syllable": "a", "is_stressed": false, "has_sinaeresis": true}, {"syllable": "ba", "is_stressed": false}, {"syllable": "ti", "is_stressed": true}, {"syllable": "da", "is_stressed": false, "has_synalepha": true}], "stress_position": -2}, {"word": [{"syllable": "y", "is_stressed": true, "has_synalepha": true}], "stress_position": -1}, {"word": [{"syllable": "a", "is_stressed": false, "has_sinaeresis": true}, {"syllable": "ni", "is_stressed": true}, {"syllable": "me", "is_stressed": false}], "stress_position": -2}]}, {"tokens": [{"word": [{"syllable": "d\\u00e1n", "is_stressed": true}, {"syllable": "do", "is_stressed": false}, {"syllable": "me", "is_stressed": false, "has_synalepha": true}], "stress_position": -3}, {"word": [{"syllable": "el", "is_stressed": false}], "stress_position": 0}, {"word": [{"syllable": "ca", "is_stressed": false}, {"syllable": "lor", "is_stressed": true}], "stress_position": -1}, {"word": [{"syllable": "del", "is_stressed": true}], "stress_position": -1}, {"word": [{"syllable": "me", "is_stressed": false}, {"syllable": "jor", "is_stressed": true}], "stress_position": -1}, {"word": [{"syllable": "a", "is_stressed": false, "has_sinaeresis": true}, {"syllable": "bri", "is_stressed": true}, {"syllable": "go", "is_stressed": false}], "stress_position": -2}, {"symbol": "."}]}], "enjambment": {"0": ["tmesis", ["ami", "go"]], "2": ["sirrematic", ["ADJ", "NOUN"]]}}
+      parameters:
+        - in: query
+          name: operations
+          description: Choose which analysis is to be performed
+          required: true
+          schema:
+            type: array
+            items:
+              type: string
+            default: [scansion,enjambment]
+            example: [scansion,enjambment]

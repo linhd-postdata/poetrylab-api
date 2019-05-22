@@ -1,0 +1,5 @@
+connexion
+pytest
+gunicorn
+git+https://github.com/linhd-postdata/jollyjumper
+git+https://github.com/postdataproject/skas
