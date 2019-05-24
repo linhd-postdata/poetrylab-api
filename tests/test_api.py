@@ -1,13 +1,5 @@
-import connexion
 import pytest
-
-options = {"swagger_ui": False}
-
-app = connexion.App(__name__, options=options)
-app.add_api('swagger.yml')
-
-# added to prevent bug with jsonify and sorted keys
-app.app.config['JSON_SORT_KEYS'] = False
+from poetrylab_api import app
 
 
 @pytest.fixture(scope='module')
@@ -136,10 +128,3 @@ def test_health(client):
                                  {'symbol': '.'}]}],
         'enjambment': {0: ('tmesis', ['ami', 'go']),
                        2: ('sirrematic', ['ADJ', 'NOUN'])}}
-
-
-if __name__ == "__main__":
-    app.run(port=5000)
-
-
-

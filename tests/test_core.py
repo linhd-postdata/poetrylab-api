@@ -1,4 +1,4 @@
-from .api import get_analysis
+from poetrylab_api.core import get_api_analysis
 
 
 def test_get_analysis_scansion():
@@ -8,7 +8,7 @@ def test_get_analysis_scansion():
             y no me trae mi verde
             abrigo que su cuerpo a mi alma abatida y anime
             dándome el calor del mejor abrigo."""
-    output = get_analysis(poem, operations)
+    output = get_api_analysis(poem, operations)
     assert output == {
         'scansion': [{'tokens': [{'word': [{'syllable': 'Ja', 'is_stressed': False},
                                            {'syllable': 'más', 'is_stressed': True}],
@@ -133,7 +133,7 @@ def test_get_analysis_enjambment():
             y no me trae mi verde
             abrigo que su cuerpo a mi alma abatida y anime
             dándome el calor del mejor abrigo."""
-    output = get_analysis(poem, operations)
+    output = get_api_analysis(poem, operations)
     assert output == {
         'enjambment': {0: ('tmesis', ['ami', 'go']),
                        2: ('sirrematic', ['ADJ', 'NOUN'])}}
@@ -146,7 +146,7 @@ def test_get_analysis_enjambment_scansion():
             y no me trae mi verde
             abrigo que su cuerpo a mi alma abatida y anime
             dándome el calor del mejor abrigo."""
-    output = get_analysis(poem, operations)
+    output = get_api_analysis(poem, operations)
     assert output == {
         'scansion': [{'tokens': [{'word': [{'syllable': 'Ja', 'is_stressed': False},
                                            {'syllable': 'más', 'is_stressed': True}],
