@@ -3,7 +3,7 @@ from skas.core import get_scansion
 from jollyjumper.core import get_enjambment
 
 
-def get_api_analysis(poem, operations):
+def get_analysis(poem, operations):
     """
     :param poem: A string with the text of the poem
     :param operations: List of strings with the operations to be performed:

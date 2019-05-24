@@ -30,12 +30,10 @@ setup(
     author='LINHD POSTDATA Project',
     author_email='info@linhd.uned.es',
     url='https://github.com/linhd-postdata/poetrylab-api',
-    packages=find_packages('src'),
-    package_dir={'': 'src'},
-    py_modules=[splitext(basename(path))[0] for path in glob('src/*.py')],
+    packages=find_packages(),
     include_package_data=True,
     zip_safe=False,
     python_requires='>3.6',
-    test_requires=['pytest'],
+    tests_requires=['pytest'],
     install_requires=read('requirements.txt').splitlines()
 )

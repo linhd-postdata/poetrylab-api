@@ -1,5 +1,3 @@
-connexion
-pytest
-gunicorn
+connexion[swagger-ui]
 jollyjumper
 skas

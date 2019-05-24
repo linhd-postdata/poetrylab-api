@@ -1,7 +1,7 @@
 #!/usr/bin/python
 import connexion
 
-options = {"swagger_ui": False}
+options = {"swagger_ui": True}
 
 app = connexion.App(__name__, options=options)
 app.add_api('openapi.yml')
