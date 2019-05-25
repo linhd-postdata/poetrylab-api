@@ -1,4 +1,4 @@
-from .api import get_analysis
+from poetrylab_api import get_analysis
 
 
 def test_get_analysis_scansion():

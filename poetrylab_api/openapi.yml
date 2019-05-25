@@ -24,7 +24,7 @@ paths:
               abrigo que su cuerpo a mi alma abatida y anime
               dándome el calor del mejor abrigo.
       description: Gets enjambent and scansion info for the poem
-      operationId: api.get_analysis
+      operationId: poetrylab_api.get_analysis
       responses:
         200:
           description: OK

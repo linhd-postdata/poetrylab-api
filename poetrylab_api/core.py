@@ -1,3 +1,4 @@
+#!/usr/bin/python
 from skas.core import get_scansion
 from jollyjumper.core import get_enjambment
 
