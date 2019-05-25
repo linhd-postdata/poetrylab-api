@@ -14,11 +14,14 @@ Since `connexion` builds a Flask application from our OpenAPI specification, you
 $ pip install -e .
 $ gunicorn poetrylab_api.app:app
 ```
-Alternatively, you can also use the Docker file provided, which exposes the server at the port 8000.
+Alternatively, you can also use the Docker file provided, which exposes the server at the port 5000.
 ```bash
-docker build --name poetrylab .
+docker build --tag linhdpostdata/poetrylab-api .
 ```
-Stable versions will be published in the Docker Hub under the `linhd-postdata/poetrylab-api` name.
+Stable versions will be published in the Docker Hub under the `linhdpostdata/poetrylab-api` name.
+```bash
+$ docker run -p "5000:5000" linhdpostdata/poetrylab-api
+```
 
 ## Development
 
