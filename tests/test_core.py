@@ -3,11 +3,11 @@ from poetrylab_api import get_analysis
 
 def test_get_analysis_scansion():
     operations = ["scansion"]
-    poem = """Jamás encontraré más fiel ami-
-            go que en los peores momentos arrime
-            y no me trae mi verde
-            abrigo que su cuerpo a mi alma abatida y anime
-            dándome el calor del mejor abrigo."""
+    poem = bytes("""Jamás encontraré más fiel ami-
+go que en los peores momentos arrime
+y no me trae mi verde
+abrigo que su cuerpo a mi alma abatida y anime
+dándome el calor del mejor abrigo.""", 'utf-8')
     output = get_analysis(poem, operations)
     assert output == {
         'scansion': [{'tokens': [{'word': [{'syllable': 'Ja', 'is_stressed': False},
@@ -128,11 +128,11 @@ def test_get_analysis_scansion():
 
 def test_get_analysis_enjambment():
     operations = ["enjambment"]
-    poem = """Jamás encontraré más fiel ami-
-            go que en los peores momentos arrime
-            y no me trae mi verde
-            abrigo que su cuerpo a mi alma abatida y anime
-            dándome el calor del mejor abrigo."""
+    poem = bytes("""Jamás encontraré más fiel ami-
+go que en los peores momentos arrime
+y no me trae mi verde
+abrigo que su cuerpo a mi alma abatida y anime
+dándome el calor del mejor abrigo.""",'utf-8')
     output = get_analysis(poem, operations)
     assert output == {
         'enjambment': {0: ('tmesis', ['ami', 'go']),
@@ -141,11 +141,11 @@ def test_get_analysis_enjambment():
 
 def test_get_analysis_enjambment_scansion():
     operations = ["enjambment", "scansion"]
-    poem = """Jamás encontraré más fiel ami-
-            go que en los peores momentos arrime
-            y no me trae mi verde
-            abrigo que su cuerpo a mi alma abatida y anime
-            dándome el calor del mejor abrigo."""
+    poem = bytes("""Jamás encontraré más fiel ami-
+go que en los peores momentos arrime
+y no me trae mi verde
+abrigo que su cuerpo a mi alma abatida y anime
+dándome el calor del mejor abrigo.""",'utf-8')
     output = get_analysis(poem, operations)
     assert output == {
         'scansion': [{'tokens': [{'word': [{'syllable': 'Ja', 'is_stressed': False},
