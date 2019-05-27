@@ -11,7 +11,7 @@ def get_analysis(poem, operations):
                             "enjambment": Performs enjambment detection
     :return: Python dict with a key for each operation and its analysis
     """
-    poem = str(poem)
+    poem = poem.decode('utf-8')
     output = {}
     for operation in operations:
         if operation == "scansion":
@@ -19,5 +19,3 @@ def get_analysis(poem, operations):
         if operation == "enjambment":
             output[operation] = get_enjambment(poem)
     return output
-
-
