@@ -1,0 +1,48 @@
+language: python
+cache: pip
+env:
+  global:
+  - LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so
+  - SEGFAULT_SIGNALS=all
+  matrix:
+  - TOXENV=check
+  - TOXENV=docs
+matrix:
+  include:
+  - python: '3.7'
+    dist: xenial
+    env:
+    - TOXENV=py37
+before_install:
+- python --version
+- uname -a
+- lsb_release -a
+install:
+- pip install tox
+- virtualenv --version
+- easy_install --version
+- pip --version
+- tox --version
+- set +x
+script:
+- travis_wait 20 tox -v
+after_failure:
+- more .tox/log/* | cat
+- more .tox/*/log/* | cat
+deploy:
+  provider: pypi
+  distributions: sdist bdist_wheel
+  skip_cleanup: true
+  skip_existing: true
+  user: linhd-postdata
+  password:
+    secure: "FxnPeUCDJjuchs9+90HMDJ/zgnJwgLsySWjdlN5exFX+hzL0EBdCzuZNgYl/el3GyXxTtFoFhCxLLHFsGTSWwranyBrsefmbVsc/pG5fgbhwdd7LSjSKbHc5qNrqf0BmnU8kNdhTj52CS0mvYRupodIkbx+NovHGw8SDpGA5jUjNy0ydNflUCxggV8bNh18Jg480cbUJn7LNSXU0SZC5q/Lhs3ttEeucGVgCoK+H4SlSbh4AwGslccYztnj5C+kAH+EKBWJoP0iCAgeUyJgJHp3QkIa1aaZ3MRFazKBtS2ZfUEO8dHL00cIaLmNfLIf7pVyEGeNEaUZNO1KGhujeJRZWzqlLFsYDF54gqfeOWSf/SnhMydlFEPb4zG0afdau6ayPehiMbpiQBsNF6hbT6o5yzyzYVmID/7b0myU0JWckk5p6qpYUnTybOPFcRw7JYKm6fogFLgtWDMmsBCktBjiFBhA+YcwScwphpMmg4ewBBQUGJCwUgW8rP/uXhHLGdefd2gVe69Yq1YmRN46S2zrsex2Z/5zUJwxPKLjUSWbnUaVnspLhJJ87fr2r9n7PGy0xIutW4cxVIpiSYETz5jOnEBHGObqdstRGYDftxmUzP8VQuLqUhD9OtgodbVGvur7csEyiIDTK9g3rofR4+3LyOmo4jj3vKVqT+BSId4Q="
+  on:
+    tags: true
+    repo: linhd-postdata/poetrylab-api
+    python: 3.7
+    condition: "$TOXENV = py37"
+notifications:
+  email:
+    on_success: never
+    on_failure: always
