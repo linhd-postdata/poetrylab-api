@@ -34,6 +34,7 @@ setup(
     include_package_data=True,
     zip_safe=False,
     python_requires='>3.6',
-    tests_requires=['pytest'],
+    setup_requires=['pytest-runner'],
+    tests_require=['pytest'],
     install_requires=read('requirements.txt').splitlines()
 )
