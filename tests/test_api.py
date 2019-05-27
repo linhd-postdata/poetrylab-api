@@ -1,3 +1,4 @@
+import json
 import pytest
 from poetrylab_api import app
 
@@ -9,9 +10,14 @@ def client():
 
 
 def test_health(client):
-    response = client.post('/analysis', data={"operations": ["scansion", "enjabment"]})
+    text = """Jamás encontraré más fiel ami-
+go que en los peores momentos arrime
+y no me trae mi verde
+abrigo que su cuerpo a mi alma abatida y anime
+dándome el calor del mejor abrigo."""
+    response = client.post('/analysis?operations=enjambment&operations=scansion', data=text)
     assert response.status_code == 200
-    assert response.data == {
+    assert json.loads(response.data) == {
         'scansion': [{'tokens': [{'word': [{'syllable': 'Ja', 'is_stressed': False},
                                            {'syllable': 'más', 'is_stressed': True}],
                                   'stress_position': -1},
@@ -126,5 +132,5 @@ def test_health(client):
                                            {'syllable': 'go', 'is_stressed': False}],
                                   'stress_position': -2},
                                  {'symbol': '.'}]}],
-        'enjambment': {0: ('tmesis', ['ami', 'go']),
-                       2: ('sirrematic', ['ADJ', 'NOUN'])}}
+        'enjambment': {'0': ['tmesis', ['ami', 'go']],
+                       '2': ['sirrematic', ['ADJ', 'NOUN']]}}
