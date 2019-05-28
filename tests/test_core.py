@@ -132,7 +132,7 @@ def test_get_analysis_enjambment():
 go que en los peores momentos arrime
 y no me trae mi verde
 abrigo que su cuerpo a mi alma abatida y anime
-dándome el calor del mejor abrigo.""",'utf-8')
+dándome el calor del mejor abrigo.""", 'utf-8')
     output = get_analysis(poem, operations)
     assert output == {
         'enjambment': {0: ('tmesis', ['ami', 'go']),
@@ -145,7 +145,7 @@ def test_get_analysis_enjambment_scansion():
 go que en los peores momentos arrime
 y no me trae mi verde
 abrigo que su cuerpo a mi alma abatida y anime
-dándome el calor del mejor abrigo.""",'utf-8')
+dándome el calor del mejor abrigo.""", 'utf-8')
     output = get_analysis(poem, operations)
     assert output == {
         'scansion': [{'tokens': [{'word': [{'syllable': 'Ja', 'is_stressed': False},
