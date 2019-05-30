@@ -3,7 +3,10 @@ info:
   title: PoetryLab
   version: "1.0"
 servers:
+  - url: /
+    description: Production server
   - url: http://localhost:5000/
+    description: Test server
 paths:
   /analysis:
     post:
