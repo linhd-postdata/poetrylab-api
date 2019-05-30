@@ -1,3 +1,4 @@
 connexion[swagger-ui]
+flask-cors
 jollyjumper
 skas
