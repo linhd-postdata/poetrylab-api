@@ -1,6 +1,6 @@
 #!/usr/bin/python
-from skas.core import get_scansion
 from jollyjumper.core import get_enjambment
+from rantanplan.core import get_scansion
 
 
 def get_analysis(poem, operations):
