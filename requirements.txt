@@ -1,4 +1,5 @@
 connexion[swagger-ui]
+requests
 flask-cors
 jollyjumper
 rantanplan

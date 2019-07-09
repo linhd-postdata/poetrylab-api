@@ -2,6 +2,8 @@
 from jollyjumper.core import get_enjambment
 from rantanplan.core import get_scansion
 
+from .addons import is_available, perform
+
 
 def get_analysis(poem, operations):
     """
@@ -18,4 +20,7 @@ def get_analysis(poem, operations):
             output[operation] = get_scansion(poem)
         if operation == "enjambment":
             output[operation] = get_enjambment(poem)
+        if is_available(operation):
+            output[operation] = perform(operation, poem)
+
     return output
