@@ -6,7 +6,7 @@ RUN apk update &&\
     apk add --no-cache g++ gfortran libstdc++ &&\
     pip install -U "pip<19.0" &&\
     pip install --no-cache-dir numpy &&\
-    pip install --no-cache-dir spacy &&\
+    pip install --no-cache-dir "spacy<=2.1" &&\
     python -m spacy download es_core_news_md
 WORKDIR /usr/src/app
 COPY requirements.txt ./
