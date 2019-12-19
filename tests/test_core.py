@@ -10,329 +10,418 @@ abrigo que su cuerpo a mi alma abatida y anime
 dándome el calor del mejor abrigo.""", 'utf-8')
     output = get_analysis(poem, operations)
     assert output == {
-        'scansion': [
-            {
-                'tokens': [
+        'scansion': [{
+            'tokens': [{
+                'word': [{
+                    'syllable': 'Ja',
+                    'is_stressed': False
+                },
                     {
-                        'word': [
-                            {
-                                'syllable': 'Ja',
-                                'is_stressed': False
-                            },
-                            {
-                                'syllable': 'más',
-                                'is_stressed': True
-                            }
-                        ],
-                        'stress_position': -1
-                    },
-                    {
-                        'word': [
-                            {
-                                'syllable': 'en',
-                                'is_stressed': False
-                            },
-                            {
-                                'syllable': 'con',
-                                'is_stressed': False
-                            },
-                            {
-                                'syllable': 'tra',
-                                'is_stressed': False
-                            },
-                            {
-                                'syllable': 'ré',
-                                'is_stressed': True
-                            }
-                        ],
-                        'stress_position': -1
-                    },
-                    {
-                        'word': [
-                            {
-                                'syllable': 'más',
-                                'is_stressed': True
-                            }
-                        ],
-                        'stress_position': -1
-                    },
-                    {
-                        'word': [
-                            {
-                                'syllable': 'fiel',
-                                'is_stressed': True
-                            }
-                        ],
-                        'stress_position': -1
-                    },
-                    {
-                        'word': [
-                            {
-                                'syllable': 'a',
-                                'is_stressed': True
-                            },
-                            {
-                                'syllable': 'mi',
-                                'is_stressed': False
-                            }
-                        ],
-                        'stress_position': -2
-                    },
-                    {
-                        'symbol': '-'
-                    }
-                ]
+                        'syllable': 'más',
+                        'is_stressed': True,
+                        'is_word_end': True
+                    }],
+                'stress_position': -1
             },
+                {
+                    'word': [{
+                        'syllable': 'en',
+                        'is_stressed': False
+                    },
+                        {
+                            'syllable': 'con',
+                            'is_stressed': False
+                        },
+                        {
+                            'syllable': 'tra',
+                            'is_stressed': False
+                        },
+                        {
+                            'syllable': 'ré',
+                            'is_stressed': True,
+                            'is_word_end': True
+                        }],
+                    'stress_position': -1
+                },
+                {
+                    'word': [{
+                        'syllable': 'más',
+                        'is_stressed': True,
+                        'is_word_end': True
+                    }],
+                    'stress_position': -1
+                },
+                {
+                    'word': [{
+                        'syllable': 'fiel',
+                        'is_stressed': True,
+                        'is_word_end': True
+                    }],
+                    'stress_position': -1
+                },
+                {
+                    'word': [{
+                        'syllable': 'a',
+                        'is_stressed': True
+                    },
+                        {
+                            'syllable': 'mi',
+                            'is_stressed': False,
+                            'is_word_end': True
+                        }],
+                    'stress_position': -2
+                },
+                {'symbol': '-'}],
+            'phonological_groups': [
+                {'syllable': 'Ja', 'is_stressed': False},
+                {
+                    'syllable': 'más', 'is_stressed': True,
+                    'is_word_end': True
+                },
+                {'syllable': 'en', 'is_stressed': False},
+                {'syllable': 'con', 'is_stressed': False},
+                {'syllable': 'tra', 'is_stressed': False},
+                {
+                    'syllable': 'ré', 'is_stressed': True,
+                    'is_word_end': True
+                },
+                {
+                    'syllable': 'más', 'is_stressed': True,
+                    'is_word_end': True
+                },
+                {
+                    'syllable': 'fiel', 'is_stressed': True,
+                    'is_word_end': True
+                },
+                {'syllable': 'a', 'is_stressed': True},
+                {
+                    'syllable': 'mi', 'is_stressed': False,
+                    'is_word_end': True
+                }],
+            'rhythm': {
+                'stress': '-+---++++-', 'type': 'pattern',
+                'length': 10
+            }
+        },
             {
-                'tokens': [
+                'tokens': [{
+                    'word': [{
+                        'syllable': 'go',
+                        'is_stressed': True,
+                        'is_word_end': True
+                    }],
+                    'stress_position': -1
+                },
                     {
-                        'word': [
-                            {
-                                'syllable': 'go',
-                                'is_stressed': True
-                            }
-                        ],
-                        'stress_position': -1
-                    },
-                    {
-                        'word': [
-                            {
-                                'syllable': 'que',
-                                'is_stressed': False,
-                                'has_synalepha': True
-                            }
-                        ],
+                        'word': [{
+                            'syllable': 'que',
+                            'is_stressed': False,
+                            'has_synalepha': True,
+                            'is_word_end': True
+                        }],
                         'stress_position': 0
                     },
                     {
-                        'word': [
-                            {
-                                'syllable': 'en',
-                                'is_stressed': False
-                            }
-                        ],
+                        'word': [{
+                            'syllable': 'en',
+                            'is_stressed': False,
+                            'is_word_end': True
+                        }],
                         'stress_position': 0
                     },
                     {
-                        'word': [
-                            {
-                                'syllable': 'los',
-                                'is_stressed': False
-                            }
-                        ],
+                        'word': [{
+                            'syllable': 'los',
+                            'is_stressed': False,
+                            'is_word_end': True
+                        }],
                         'stress_position': 0
                     },
                     {
-                        'word': [
-                            {
-                                'syllable': 'pe',
-                                'is_stressed': False,
-                                'has_sinaeresis': True
-                            },
+                        'word': [{
+                            'syllable': 'pe',
+                            'is_stressed': False,
+                            'has_sinaeresis': True
+                        },
                             {
                                 'syllable': 'o',
                                 'is_stressed': True
                             },
                             {
                                 'syllable': 'res',
-                                'is_stressed': False
-                            }
-                        ],
+                                'is_stressed': False,
+                                'is_word_end': True
+                            }],
                         'stress_position': -2
                     },
                     {
-                        'word': [
-                            {
-                                'syllable': 'mo',
-                                'is_stressed': False
-                            },
+                        'word': [{
+                            'syllable': 'mo',
+                            'is_stressed': False
+                        },
                             {
                                 'syllable': 'men',
                                 'is_stressed': True
                             },
                             {
                                 'syllable': 'tos',
-                                'is_stressed': False
-                            }
-                        ],
+                                'is_stressed': False,
+                                'is_word_end': True
+                            }],
                         'stress_position': -2
                     },
                     {
-                        'word': [
-                            {
-                                'syllable': 'a',
-                                'is_stressed': False
-                            },
+                        'word': [{
+                            'syllable': 'a',
+                            'is_stressed': False
+                        },
                             {
                                 'syllable': 'rri',
                                 'is_stressed': True
                             },
                             {
                                 'syllable': 'me',
-                                'is_stressed': False
-                            }
-                        ],
+                                'is_stressed': False,
+                                'is_word_end': True
+                            }],
                         'stress_position': -2
-                    }
-                ]
+                    }],
+                'phonological_groups': [{
+                    'syllable': 'go',
+                    'is_stressed': True,
+                    'is_word_end': True
+                },
+                    {
+                        'syllable': 'queen',
+                        'is_stressed': False,
+                        'synalepha_index': [2],
+                        'is_word_end': True
+                    },
+                    {
+                        'syllable': 'los',
+                        'is_stressed': False,
+                        'is_word_end': True
+                    },
+                    {
+                        'syllable': 'peo',
+                        'is_stressed': True,
+                        'sinaeresis_index': [1]
+                    },
+                    {
+                        'syllable': 'res',
+                        'is_stressed': False,
+                        'is_word_end': True
+                    },
+                    {
+                        'syllable': 'mo',
+                        'is_stressed': False
+                    },
+                    {
+                        'syllable': 'men',
+                        'is_stressed': True
+                    },
+                    {
+                        'syllable': 'tos',
+                        'is_stressed': False,
+                        'is_word_end': True
+                    },
+                    {
+                        'syllable': 'a',
+                        'is_stressed': False
+                    },
+                    {
+                        'syllable': 'rri',
+                        'is_stressed': True
+                    },
+                    {
+                        'syllable': 'me',
+                        'is_stressed': False,
+                        'is_word_end': True
+                    }],
+                'rhythm': {
+                    'stress': '+--+--+--+-', 'type': 'pattern',
+                    'length': 11
+                }
             },
             {
-                'tokens': [
+                'tokens': [{
+                    'word': [{
+                        'syllable': 'y',
+                        'is_stressed': False,
+                        'is_word_end': True
+                    }],
+                    'stress_position': 0
+                },
                     {
-                        'word': [
-                            {
-                                'syllable': 'y',
-                                'is_stressed': True
-                            }
-                        ],
+                        'word': [{
+                            'syllable': 'no',
+                            'is_stressed': True,
+                            'is_word_end': True
+                        }],
                         'stress_position': -1
                     },
                     {
-                        'word': [
-                            {
-                                'syllable': 'no',
-                                'is_stressed': True
-                            }
-                        ],
-                        'stress_position': -1
-                    },
-                    {
-                        'word': [
-                            {
-                                'syllable': 'me',
-                                'is_stressed': False
-                            }
-                        ],
+                        'word': [{
+                            'syllable': 'me',
+                            'is_stressed': False,
+                            'is_word_end': True
+                        }],
                         'stress_position': 0
                     },
                     {
-                        'word': [
-                            {
-                                'syllable': 'tra',
-                                'is_stressed': True,
-                                'has_sinaeresis': True
-                            },
+                        'word': [{
+                            'syllable': 'tra',
+                            'is_stressed': True,
+                            'has_sinaeresis': True
+                        },
                             {
                                 'syllable': 'e',
-                                'is_stressed': False
-                            }
-                        ],
+                                'is_stressed': False,
+                                'is_word_end': True
+                            }],
                         'stress_position': -2
                     },
                     {
-                        'word': [
-                            {
-                                'syllable': 'mi',
-                                'is_stressed': False
-                            }
-                        ],
+                        'word': [{
+                            'syllable': 'mi',
+                            'is_stressed': False,
+                            'is_word_end': True
+                        }],
                         'stress_position': 0
                     },
                     {
-                        'word': [
-                            {
-                                'syllable': 'ver',
-                                'is_stressed': True
-                            },
+                        'word': [{
+                            'syllable': 'ver',
+                            'is_stressed': True
+                        },
                             {
                                 'syllable': 'de',
-                                'is_stressed': False
-                            }
-                        ],
+                                'is_stressed': False,
+                                'is_word_end': True
+                            }],
                         'stress_position': -2
-                    }
-                ]
+                    }],
+                'phonological_groups': [{
+                    'syllable': 'y',
+                    'is_stressed': False,
+                    'is_word_end': True
+                },
+                    {
+                        'syllable': 'no',
+                        'is_stressed': True,
+                        'is_word_end': True
+                    },
+                    {
+                        'syllable': 'me',
+                        'is_stressed': False,
+                        'is_word_end': True
+                    },
+                    {
+                        'syllable': 'trae',
+                        'is_stressed': True,
+                        'sinaeresis_index': [2],
+                        'is_word_end': True
+                    },
+                    {
+                        'syllable': 'mi',
+                        'is_stressed': False,
+                        'is_word_end': True
+                    },
+                    {
+                        'syllable': 'ver',
+                        'is_stressed': True
+                    },
+                    {
+                        'syllable': 'de',
+                        'is_stressed': False,
+                        'is_word_end': True
+                    }],
+                'rhythm': {
+                    'stress': '-+-+-+-', 'type': 'pattern',
+                    'length': 7
+                }
             },
             {
-                'tokens': [
-                    {
-                        'word': [
-                            {
-                                'syllable': 'a',
-                                'is_stressed': False
-                            },
-                            {
-                                'syllable': 'bri',
-                                'is_stressed': True
-                            },
-                            {
-                                'syllable': 'go',
-                                'is_stressed': False
-                            }
-                        ],
-                        'stress_position': -2
+                'tokens': [{
+                    'word': [{
+                        'syllable': 'a',
+                        'is_stressed': False
                     },
+                        {
+                            'syllable': 'bri',
+                            'is_stressed': True
+                        },
+                        {
+                            'syllable': 'go',
+                            'is_stressed': False,
+                            'is_word_end': True
+                        }],
+                    'stress_position': -2
+                },
                     {
-                        'word': [
-                            {
-                                'syllable': 'que',
-                                'is_stressed': False
-                            }
-                        ],
+                        'word': [{
+                            'syllable': 'que',
+                            'is_stressed': False,
+                            'is_word_end': True
+                        }],
                         'stress_position': 0
                     },
                     {
-                        'word': [
-                            {
-                                'syllable': 'su',
-                                'is_stressed': False
-                            }
-                        ],
+                        'word': [{
+                            'syllable': 'su',
+                            'is_stressed': False,
+                            'is_word_end': True
+                        }],
                         'stress_position': 0
                     },
                     {
-                        'word': [
-                            {
-                                'syllable': 'cuer',
-                                'is_stressed': True
-                            },
+                        'word': [{
+                            'syllable': 'cuer',
+                            'is_stressed': True
+                        },
                             {
                                 'syllable': 'po',
                                 'is_stressed': False,
-                                'has_synalepha': True
-                            }
-                        ],
+                                'has_synalepha': True,
+                                'is_word_end': True
+                            }],
                         'stress_position': -2
                     },
                     {
-                        'word': [
-                            {
-                                'syllable': 'a',
-                                'is_stressed': False
-                            }
-                        ],
+                        'word': [{
+                            'syllable': 'a',
+                            'is_stressed': False,
+                            'is_word_end': True
+                        }],
                         'stress_position': 0
                     },
                     {
-                        'word': [
-                            {
-                                'syllable': 'mi',
-                                'is_stressed': False,
-                                'has_synalepha': True
-                            }
-                        ],
+                        'word': [{
+                            'syllable': 'mi',
+                            'is_stressed': False,
+                            'has_synalepha': True,
+                            'is_word_end': True
+                        }],
                         'stress_position': 0
                     },
                     {
-                        'word': [
-                            {
-                                'syllable': 'al',
-                                'is_stressed': True
-                            },
+                        'word': [{
+                            'syllable': 'al',
+                            'is_stressed': True
+                        },
                             {
                                 'syllable': 'ma',
                                 'is_stressed': False,
-                                'has_synalepha': True
-                            }
-                        ],
+                                'has_synalepha': True,
+                                'is_word_end': True
+                            }],
                         'stress_position': -2
                     },
                     {
-                        'word': [
-                            {
-                                'syllable': 'a',
-                                'is_stressed': False
-                            },
+                        'word': [{
+                            'syllable': 'a',
+                            'is_stressed': False
+                        },
                             {
                                 'syllable': 'ba',
                                 'is_stressed': False
@@ -344,127 +433,191 @@ dándome el calor del mejor abrigo.""", 'utf-8')
                             {
                                 'syllable': 'da',
                                 'is_stressed': False,
-                                'has_synalepha': True
-                            }
-                        ],
+                                'has_synalepha': True,
+                                'is_word_end': True
+                            }],
                         'stress_position': -2
                     },
                     {
-                        'word': [
-                            {
-                                'syllable': 'y',
-                                'is_stressed': True,
-                                'has_synalepha': True
-                            }
-                        ],
-                        'stress_position': -1
+                        'word': [{
+                            'syllable': 'y',
+                            'is_stressed': False,
+                            'has_synalepha': True,
+                            'is_word_end': True
+                        }],
+                        'stress_position': 0
                     },
                     {
-                        'word': [
-                            {
-                                'syllable': 'a',
-                                'is_stressed': False
-                            },
+                        'word': [{
+                            'syllable': 'a',
+                            'is_stressed': False
+                        },
                             {
                                 'syllable': 'ni',
                                 'is_stressed': True
                             },
                             {
                                 'syllable': 'me',
-                                'is_stressed': False
-                            }
-                        ],
+                                'is_stressed': False,
+                                'is_word_end': True
+                            }],
                         'stress_position': -2
-                    }
-                ]
+                    }],
+                'phonological_groups': [
+                    {'syllable': 'a', 'is_stressed': False},
+                    {'syllable': 'bri', 'is_stressed': True},
+                    {
+                        'syllable': 'go', 'is_stressed': False,
+                        'is_word_end': True
+                    },
+                    {
+                        'syllable': 'que', 'is_stressed': False,
+                        'is_word_end': True
+                    },
+                    {
+                        'syllable': 'su', 'is_stressed': False,
+                        'is_word_end': True
+                    },
+                    {'syllable': 'cuer', 'is_stressed': True},
+                    {
+                        'syllable': 'poa',
+                        'is_stressed': False,
+                        'synalepha_index': [1],
+                        'is_word_end': True
+                    },
+                    {
+                        'syllable': 'mial', 'is_stressed': True,
+                        'synalepha_index': [1]
+                    },
+                    {
+                        'syllable': 'maa', 'is_stressed': False,
+                        'synalepha_index': [1]
+                    },
+                    {'syllable': 'ba', 'is_stressed': False},
+                    {'syllable': 'ti', 'is_stressed': True},
+                    {
+                        'syllable': 'daya', 'is_stressed': False,
+                        'synalepha_index': [1, 2]
+                    },
+                    {'syllable': 'ni', 'is_stressed': True},
+                    {
+                        'syllable': 'me', 'is_stressed': False,
+                        'is_word_end': True
+                    }],
+                'rhythm': {
+                    'stress': '-+---+-+--+-+-', 'type': 'pattern',
+                    'length': 14
+                }
             },
             {
-                'tokens': [
-                    {
-                        'word': [
-                            {
-                                'syllable': 'dán',
-                                'is_stressed': True
-                            },
-                            {
-                                'syllable': 'do',
-                                'is_stressed': False
-                            },
-                            {
-                                'syllable': 'me',
-                                'is_stressed': False,
-                                'has_synalepha': True
-                            }
-                        ],
-                        'stress_position': -3
+                'tokens': [{
+                    'word': [{
+                        'syllable': 'dán',
+                        'is_stressed': True
                     },
+                        {
+                            'syllable': 'do',
+                            'is_stressed': False
+                        },
+                        {
+                            'syllable': 'me',
+                            'is_stressed': False,
+                            'has_synalepha': True,
+                            'is_word_end': True
+                        }],
+                    'stress_position': -3
+                },
                     {
-                        'word': [
-                            {
-                                'syllable': 'el',
-                                'is_stressed': False
-                            }
-                        ],
+                        'word': [{
+                            'syllable': 'el',
+                            'is_stressed': False,
+                            'is_word_end': True
+                        }],
                         'stress_position': 0
                     },
                     {
-                        'word': [
-                            {
-                                'syllable': 'ca',
-                                'is_stressed': False
-                            },
+                        'word': [{
+                            'syllable': 'ca',
+                            'is_stressed': False
+                        },
                             {
                                 'syllable': 'lor',
-                                'is_stressed': True
-                            }
-                        ],
+                                'is_stressed': True,
+                                'is_word_end': True
+                            }],
                         'stress_position': -1
                     },
                     {
-                        'word': [
-                            {
-                                'syllable': 'del',
-                                'is_stressed': False
-                            }
-                        ],
+                        'word': [{
+                            'syllable': 'del',
+                            'is_stressed': False,
+                            'is_word_end': True
+                        }],
                         'stress_position': 0
                     },
                     {
-                        'word': [
-                            {
-                                'syllable': 'me',
-                                'is_stressed': False
-                            },
+                        'word': [{
+                            'syllable': 'me',
+                            'is_stressed': False
+                        },
                             {
                                 'syllable': 'jor',
-                                'is_stressed': True
-                            }
-                        ],
+                                'is_stressed': True,
+                                'is_word_end': True
+                            }],
                         'stress_position': -1
                     },
                     {
-                        'word': [
-                            {
-                                'syllable': 'a',
-                                'is_stressed': False
-                            },
+                        'word': [{
+                            'syllable': 'a',
+                            'is_stressed': False
+                        },
                             {
                                 'syllable': 'bri',
                                 'is_stressed': True
                             },
                             {
                                 'syllable': 'go',
-                                'is_stressed': False
-                            }
-                        ],
+                                'is_stressed': False,
+                                'is_word_end': True
+                            }],
                         'stress_position': -2
                     },
+                    {'symbol': '.'}],
+                'phonological_groups': [
+                    {'syllable': 'dán', 'is_stressed': True},
+                    {'syllable': 'do', 'is_stressed': False},
                     {
-                        'symbol': '.'
-                    }
-                ]
-            }
-        ]
+                        'syllable': 'meel',
+                        'is_stressed': False,
+                        'synalepha_index': [1],
+                        'is_word_end': True
+                    },
+                    {'syllable': 'ca', 'is_stressed': False},
+                    {
+                        'syllable': 'lor', 'is_stressed': True,
+                        'is_word_end': True
+                    },
+                    {
+                        'syllable': 'del', 'is_stressed': False,
+                        'is_word_end': True
+                    },
+                    {'syllable': 'me', 'is_stressed': False},
+                    {
+                        'syllable': 'jor', 'is_stressed': True,
+                        'is_word_end': True
+                    },
+                    {'syllable': 'a', 'is_stressed': False},
+                    {'syllable': 'bri', 'is_stressed': True},
+                    {
+                        'syllable': 'go', 'is_stressed': False,
+                        'is_word_end': True
+                    }],
+                'rhythm': {
+                    'stress': '+---+--+-+-', 'type': 'pattern',
+                    'length': 11
+                }
+            }]
     }
 
 
@@ -505,329 +658,418 @@ abrigo que su cuerpo a mi alma abatida y anime
 dándome el calor del mejor abrigo.""", 'utf-8')
     output = get_analysis(poem, operations)
     assert output == {
-        'scansion': [
-            {
-                'tokens': [
+        'scansion': [{
+            'tokens': [{
+                'word': [{
+                    'syllable': 'Ja',
+                    'is_stressed': False
+                },
                     {
-                        'word': [
-                            {
-                                'syllable': 'Ja',
-                                'is_stressed': False
-                            },
-                            {
-                                'syllable': 'más',
-                                'is_stressed': True
-                            }
-                        ],
-                        'stress_position': -1
-                    },
-                    {
-                        'word': [
-                            {
-                                'syllable': 'en',
-                                'is_stressed': False
-                            },
-                            {
-                                'syllable': 'con',
-                                'is_stressed': False
-                            },
-                            {
-                                'syllable': 'tra',
-                                'is_stressed': False
-                            },
-                            {
-                                'syllable': 'ré',
-                                'is_stressed': True
-                            }
-                        ],
-                        'stress_position': -1
-                    },
-                    {
-                        'word': [
-                            {
-                                'syllable': 'más',
-                                'is_stressed': True
-                            }
-                        ],
-                        'stress_position': -1
-                    },
-                    {
-                        'word': [
-                            {
-                                'syllable': 'fiel',
-                                'is_stressed': True
-                            }
-                        ],
-                        'stress_position': -1
-                    },
-                    {
-                        'word': [
-                            {
-                                'syllable': 'a',
-                                'is_stressed': True
-                            },
-                            {
-                                'syllable': 'mi',
-                                'is_stressed': False
-                            }
-                        ],
-                        'stress_position': -2
-                    },
-                    {
-                        'symbol': '-'
-                    }
-                ]
+                        'syllable': 'más',
+                        'is_stressed': True,
+                        'is_word_end': True
+                    }],
+                'stress_position': -1
             },
+                {
+                    'word': [{
+                        'syllable': 'en',
+                        'is_stressed': False
+                    },
+                        {
+                            'syllable': 'con',
+                            'is_stressed': False
+                        },
+                        {
+                            'syllable': 'tra',
+                            'is_stressed': False
+                        },
+                        {
+                            'syllable': 'ré',
+                            'is_stressed': True,
+                            'is_word_end': True
+                        }],
+                    'stress_position': -1
+                },
+                {
+                    'word': [{
+                        'syllable': 'más',
+                        'is_stressed': True,
+                        'is_word_end': True
+                    }],
+                    'stress_position': -1
+                },
+                {
+                    'word': [{
+                        'syllable': 'fiel',
+                        'is_stressed': True,
+                        'is_word_end': True
+                    }],
+                    'stress_position': -1
+                },
+                {
+                    'word': [{
+                        'syllable': 'a',
+                        'is_stressed': True
+                    },
+                        {
+                            'syllable': 'mi',
+                            'is_stressed': False,
+                            'is_word_end': True
+                        }],
+                    'stress_position': -2
+                },
+                {'symbol': '-'}],
+            'phonological_groups': [
+                {'syllable': 'Ja', 'is_stressed': False},
+                {
+                    'syllable': 'más', 'is_stressed': True,
+                    'is_word_end': True
+                },
+                {'syllable': 'en', 'is_stressed': False},
+                {'syllable': 'con', 'is_stressed': False},
+                {'syllable': 'tra', 'is_stressed': False},
+                {
+                    'syllable': 'ré', 'is_stressed': True,
+                    'is_word_end': True
+                },
+                {
+                    'syllable': 'más', 'is_stressed': True,
+                    'is_word_end': True
+                },
+                {
+                    'syllable': 'fiel', 'is_stressed': True,
+                    'is_word_end': True
+                },
+                {'syllable': 'a', 'is_stressed': True},
+                {
+                    'syllable': 'mi', 'is_stressed': False,
+                    'is_word_end': True
+                }],
+            'rhythm': {
+                'stress': '-+---++++-', 'type': 'pattern',
+                'length': 10
+            }
+        },
             {
-                'tokens': [
+                'tokens': [{
+                    'word': [{
+                        'syllable': 'go',
+                        'is_stressed': True,
+                        'is_word_end': True
+                    }],
+                    'stress_position': -1
+                },
                     {
-                        'word': [
-                            {
-                                'syllable': 'go',
-                                'is_stressed': True
-                            }
-                        ],
-                        'stress_position': -1
-                    },
-                    {
-                        'word': [
-                            {
-                                'syllable': 'que',
-                                'is_stressed': False,
-                                'has_synalepha': True
-                            }
-                        ],
+                        'word': [{
+                            'syllable': 'que',
+                            'is_stressed': False,
+                            'has_synalepha': True,
+                            'is_word_end': True
+                        }],
                         'stress_position': 0
                     },
                     {
-                        'word': [
-                            {
-                                'syllable': 'en',
-                                'is_stressed': False
-                            }
-                        ],
+                        'word': [{
+                            'syllable': 'en',
+                            'is_stressed': False,
+                            'is_word_end': True
+                        }],
                         'stress_position': 0
                     },
                     {
-                        'word': [
-                            {
-                                'syllable': 'los',
-                                'is_stressed': False
-                            }
-                        ],
+                        'word': [{
+                            'syllable': 'los',
+                            'is_stressed': False,
+                            'is_word_end': True
+                        }],
                         'stress_position': 0
                     },
                     {
-                        'word': [
-                            {
-                                'syllable': 'pe',
-                                'is_stressed': False,
-                                'has_sinaeresis': True
-                            },
+                        'word': [{
+                            'syllable': 'pe',
+                            'is_stressed': False,
+                            'has_sinaeresis': True
+                        },
                             {
                                 'syllable': 'o',
                                 'is_stressed': True
                             },
                             {
                                 'syllable': 'res',
-                                'is_stressed': False
-                            }
-                        ],
+                                'is_stressed': False,
+                                'is_word_end': True
+                            }],
                         'stress_position': -2
                     },
                     {
-                        'word': [
-                            {
-                                'syllable': 'mo',
-                                'is_stressed': False
-                            },
+                        'word': [{
+                            'syllable': 'mo',
+                            'is_stressed': False
+                        },
                             {
                                 'syllable': 'men',
                                 'is_stressed': True
                             },
                             {
                                 'syllable': 'tos',
-                                'is_stressed': False
-                            }
-                        ],
+                                'is_stressed': False,
+                                'is_word_end': True
+                            }],
                         'stress_position': -2
                     },
                     {
-                        'word': [
-                            {
-                                'syllable': 'a',
-                                'is_stressed': False
-                            },
+                        'word': [{
+                            'syllable': 'a',
+                            'is_stressed': False
+                        },
                             {
                                 'syllable': 'rri',
                                 'is_stressed': True
                             },
                             {
                                 'syllable': 'me',
-                                'is_stressed': False
-                            }
-                        ],
+                                'is_stressed': False,
+                                'is_word_end': True
+                            }],
                         'stress_position': -2
-                    }
-                ]
+                    }],
+                'phonological_groups': [{
+                    'syllable': 'go',
+                    'is_stressed': True,
+                    'is_word_end': True
+                },
+                    {
+                        'syllable': 'queen',
+                        'is_stressed': False,
+                        'synalepha_index': [2],
+                        'is_word_end': True
+                    },
+                    {
+                        'syllable': 'los',
+                        'is_stressed': False,
+                        'is_word_end': True
+                    },
+                    {
+                        'syllable': 'peo',
+                        'is_stressed': True,
+                        'sinaeresis_index': [1]
+                    },
+                    {
+                        'syllable': 'res',
+                        'is_stressed': False,
+                        'is_word_end': True
+                    },
+                    {
+                        'syllable': 'mo',
+                        'is_stressed': False
+                    },
+                    {
+                        'syllable': 'men',
+                        'is_stressed': True
+                    },
+                    {
+                        'syllable': 'tos',
+                        'is_stressed': False,
+                        'is_word_end': True
+                    },
+                    {
+                        'syllable': 'a',
+                        'is_stressed': False
+                    },
+                    {
+                        'syllable': 'rri',
+                        'is_stressed': True
+                    },
+                    {
+                        'syllable': 'me',
+                        'is_stressed': False,
+                        'is_word_end': True
+                    }],
+                'rhythm': {
+                    'stress': '+--+--+--+-', 'type': 'pattern',
+                    'length': 11
+                }
             },
             {
-                'tokens': [
+                'tokens': [{
+                    'word': [{
+                        'syllable': 'y',
+                        'is_stressed': False,
+                        'is_word_end': True
+                    }],
+                    'stress_position': 0
+                },
                     {
-                        'word': [
-                            {
-                                'syllable': 'y',
-                                'is_stressed': True
-                            }
-                        ],
+                        'word': [{
+                            'syllable': 'no',
+                            'is_stressed': True,
+                            'is_word_end': True
+                        }],
                         'stress_position': -1
                     },
                     {
-                        'word': [
-                            {
-                                'syllable': 'no',
-                                'is_stressed': True
-                            }
-                        ],
-                        'stress_position': -1
-                    },
-                    {
-                        'word': [
-                            {
-                                'syllable': 'me',
-                                'is_stressed': False
-                            }
-                        ],
+                        'word': [{
+                            'syllable': 'me',
+                            'is_stressed': False,
+                            'is_word_end': True
+                        }],
                         'stress_position': 0
                     },
                     {
-                        'word': [
-                            {
-                                'syllable': 'tra',
-                                'is_stressed': True,
-                                'has_sinaeresis': True
-                            },
+                        'word': [{
+                            'syllable': 'tra',
+                            'is_stressed': True,
+                            'has_sinaeresis': True
+                        },
                             {
                                 'syllable': 'e',
-                                'is_stressed': False
-                            }
-                        ],
+                                'is_stressed': False,
+                                'is_word_end': True
+                            }],
                         'stress_position': -2
                     },
                     {
-                        'word': [
-                            {
-                                'syllable': 'mi',
-                                'is_stressed': False
-                            }
-                        ],
+                        'word': [{
+                            'syllable': 'mi',
+                            'is_stressed': False,
+                            'is_word_end': True
+                        }],
                         'stress_position': 0
                     },
                     {
-                        'word': [
-                            {
-                                'syllable': 'ver',
-                                'is_stressed': True
-                            },
+                        'word': [{
+                            'syllable': 'ver',
+                            'is_stressed': True
+                        },
                             {
                                 'syllable': 'de',
-                                'is_stressed': False
-                            }
-                        ],
+                                'is_stressed': False,
+                                'is_word_end': True
+                            }],
                         'stress_position': -2
-                    }
-                ]
+                    }],
+                'phonological_groups': [{
+                    'syllable': 'y',
+                    'is_stressed': False,
+                    'is_word_end': True
+                },
+                    {
+                        'syllable': 'no',
+                        'is_stressed': True,
+                        'is_word_end': True
+                    },
+                    {
+                        'syllable': 'me',
+                        'is_stressed': False,
+                        'is_word_end': True
+                    },
+                    {
+                        'syllable': 'trae',
+                        'is_stressed': True,
+                        'sinaeresis_index': [2],
+                        'is_word_end': True
+                    },
+                    {
+                        'syllable': 'mi',
+                        'is_stressed': False,
+                        'is_word_end': True
+                    },
+                    {
+                        'syllable': 'ver',
+                        'is_stressed': True
+                    },
+                    {
+                        'syllable': 'de',
+                        'is_stressed': False,
+                        'is_word_end': True
+                    }],
+                'rhythm': {
+                    'stress': '-+-+-+-', 'type': 'pattern',
+                    'length': 7
+                }
             },
             {
-                'tokens': [
-                    {
-                        'word': [
-                            {
-                                'syllable': 'a',
-                                'is_stressed': False
-                            },
-                            {
-                                'syllable': 'bri',
-                                'is_stressed': True
-                            },
-                            {
-                                'syllable': 'go',
-                                'is_stressed': False
-                            }
-                        ],
-                        'stress_position': -2
+                'tokens': [{
+                    'word': [{
+                        'syllable': 'a',
+                        'is_stressed': False
                     },
+                        {
+                            'syllable': 'bri',
+                            'is_stressed': True
+                        },
+                        {
+                            'syllable': 'go',
+                            'is_stressed': False,
+                            'is_word_end': True
+                        }],
+                    'stress_position': -2
+                },
                     {
-                        'word': [
-                            {
-                                'syllable': 'que',
-                                'is_stressed': False
-                            }
-                        ],
+                        'word': [{
+                            'syllable': 'que',
+                            'is_stressed': False,
+                            'is_word_end': True
+                        }],
                         'stress_position': 0
                     },
                     {
-                        'word': [
-                            {
-                                'syllable': 'su',
-                                'is_stressed': False
-                            }
-                        ],
+                        'word': [{
+                            'syllable': 'su',
+                            'is_stressed': False,
+                            'is_word_end': True
+                        }],
                         'stress_position': 0
                     },
                     {
-                        'word': [
-                            {
-                                'syllable': 'cuer',
-                                'is_stressed': True
-                            },
+                        'word': [{
+                            'syllable': 'cuer',
+                            'is_stressed': True
+                        },
                             {
                                 'syllable': 'po',
                                 'is_stressed': False,
-                                'has_synalepha': True
-                            }
-                        ],
+                                'has_synalepha': True,
+                                'is_word_end': True
+                            }],
                         'stress_position': -2
                     },
                     {
-                        'word': [
-                            {
-                                'syllable': 'a',
-                                'is_stressed': False
-                            }
-                        ],
+                        'word': [{
+                            'syllable': 'a',
+                            'is_stressed': False,
+                            'is_word_end': True
+                        }],
                         'stress_position': 0
                     },
                     {
-                        'word': [
-                            {
-                                'syllable': 'mi',
-                                'is_stressed': False,
-                                'has_synalepha': True
-                            }
-                        ],
+                        'word': [{
+                            'syllable': 'mi',
+                            'is_stressed': False,
+                            'has_synalepha': True,
+                            'is_word_end': True
+                        }],
                         'stress_position': 0
                     },
                     {
-                        'word': [
-                            {
-                                'syllable': 'al',
-                                'is_stressed': True
-                            },
+                        'word': [{
+                            'syllable': 'al',
+                            'is_stressed': True
+                        },
                             {
                                 'syllable': 'ma',
                                 'is_stressed': False,
-                                'has_synalepha': True
-                            }
-                        ],
+                                'has_synalepha': True,
+                                'is_word_end': True
+                            }],
                         'stress_position': -2
                     },
                     {
-                        'word': [
-                            {
-                                'syllable': 'a',
-                                'is_stressed': False
-                            },
+                        'word': [{
+                            'syllable': 'a',
+                            'is_stressed': False
+                        },
                             {
                                 'syllable': 'ba',
                                 'is_stressed': False
@@ -839,127 +1081,191 @@ dándome el calor del mejor abrigo.""", 'utf-8')
                             {
                                 'syllable': 'da',
                                 'is_stressed': False,
-                                'has_synalepha': True
-                            }
-                        ],
+                                'has_synalepha': True,
+                                'is_word_end': True
+                            }],
                         'stress_position': -2
                     },
                     {
-                        'word': [
-                            {
-                                'syllable': 'y',
-                                'is_stressed': True,
-                                'has_synalepha': True
-                            }
-                        ],
-                        'stress_position': -1
+                        'word': [{
+                            'syllable': 'y',
+                            'is_stressed': False,
+                            'has_synalepha': True,
+                            'is_word_end': True
+                        }],
+                        'stress_position': 0
                     },
                     {
-                        'word': [
-                            {
-                                'syllable': 'a',
-                                'is_stressed': False
-                            },
+                        'word': [{
+                            'syllable': 'a',
+                            'is_stressed': False
+                        },
                             {
                                 'syllable': 'ni',
                                 'is_stressed': True
                             },
                             {
                                 'syllable': 'me',
-                                'is_stressed': False
-                            }
-                        ],
+                                'is_stressed': False,
+                                'is_word_end': True
+                            }],
                         'stress_position': -2
-                    }
-                ]
+                    }],
+                'phonological_groups': [
+                    {'syllable': 'a', 'is_stressed': False},
+                    {'syllable': 'bri', 'is_stressed': True},
+                    {
+                        'syllable': 'go', 'is_stressed': False,
+                        'is_word_end': True
+                    },
+                    {
+                        'syllable': 'que', 'is_stressed': False,
+                        'is_word_end': True
+                    },
+                    {
+                        'syllable': 'su', 'is_stressed': False,
+                        'is_word_end': True
+                    },
+                    {'syllable': 'cuer', 'is_stressed': True},
+                    {
+                        'syllable': 'poa',
+                        'is_stressed': False,
+                        'synalepha_index': [1],
+                        'is_word_end': True
+                    },
+                    {
+                        'syllable': 'mial', 'is_stressed': True,
+                        'synalepha_index': [1]
+                    },
+                    {
+                        'syllable': 'maa', 'is_stressed': False,
+                        'synalepha_index': [1]
+                    },
+                    {'syllable': 'ba', 'is_stressed': False},
+                    {'syllable': 'ti', 'is_stressed': True},
+                    {
+                        'syllable': 'daya', 'is_stressed': False,
+                        'synalepha_index': [1, 2]
+                    },
+                    {'syllable': 'ni', 'is_stressed': True},
+                    {
+                        'syllable': 'me', 'is_stressed': False,
+                        'is_word_end': True
+                    }],
+                'rhythm': {
+                    'stress': '-+---+-+--+-+-', 'type': 'pattern',
+                    'length': 14
+                }
             },
             {
-                'tokens': [
-                    {
-                        'word': [
-                            {
-                                'syllable': 'dán',
-                                'is_stressed': True
-                            },
-                            {
-                                'syllable': 'do',
-                                'is_stressed': False
-                            },
-                            {
-                                'syllable': 'me',
-                                'is_stressed': False,
-                                'has_synalepha': True
-                            }
-                        ],
-                        'stress_position': -3
+                'tokens': [{
+                    'word': [{
+                        'syllable': 'dán',
+                        'is_stressed': True
                     },
+                        {
+                            'syllable': 'do',
+                            'is_stressed': False
+                        },
+                        {
+                            'syllable': 'me',
+                            'is_stressed': False,
+                            'has_synalepha': True,
+                            'is_word_end': True
+                        }],
+                    'stress_position': -3
+                },
                     {
-                        'word': [
-                            {
-                                'syllable': 'el',
-                                'is_stressed': False
-                            }
-                        ],
+                        'word': [{
+                            'syllable': 'el',
+                            'is_stressed': False,
+                            'is_word_end': True
+                        }],
                         'stress_position': 0
                     },
                     {
-                        'word': [
-                            {
-                                'syllable': 'ca',
-                                'is_stressed': False
-                            },
+                        'word': [{
+                            'syllable': 'ca',
+                            'is_stressed': False
+                        },
                             {
                                 'syllable': 'lor',
-                                'is_stressed': True
-                            }
-                        ],
+                                'is_stressed': True,
+                                'is_word_end': True
+                            }],
                         'stress_position': -1
                     },
                     {
-                        'word': [
-                            {
-                                'syllable': 'del',
-                                'is_stressed': False
-                            }
-                        ],
+                        'word': [{
+                            'syllable': 'del',
+                            'is_stressed': False,
+                            'is_word_end': True
+                        }],
                         'stress_position': 0
                     },
                     {
-                        'word': [
-                            {
-                                'syllable': 'me',
-                                'is_stressed': False
-                            },
+                        'word': [{
+                            'syllable': 'me',
+                            'is_stressed': False
+                        },
                             {
                                 'syllable': 'jor',
-                                'is_stressed': True
-                            }
-                        ],
+                                'is_stressed': True,
+                                'is_word_end': True
+                            }],
                         'stress_position': -1
                     },
                     {
-                        'word': [
-                            {
-                                'syllable': 'a',
-                                'is_stressed': False
-                            },
+                        'word': [{
+                            'syllable': 'a',
+                            'is_stressed': False
+                        },
                             {
                                 'syllable': 'bri',
                                 'is_stressed': True
                             },
                             {
                                 'syllable': 'go',
-                                'is_stressed': False
-                            }
-                        ],
+                                'is_stressed': False,
+                                'is_word_end': True
+                            }],
                         'stress_position': -2
                     },
+                    {'symbol': '.'}],
+                'phonological_groups': [
+                    {'syllable': 'dán', 'is_stressed': True},
+                    {'syllable': 'do', 'is_stressed': False},
                     {
-                        'symbol': '.'
-                    }
-                ]
-            }
-        ],
+                        'syllable': 'meel',
+                        'is_stressed': False,
+                        'synalepha_index': [1],
+                        'is_word_end': True
+                    },
+                    {'syllable': 'ca', 'is_stressed': False},
+                    {
+                        'syllable': 'lor', 'is_stressed': True,
+                        'is_word_end': True
+                    },
+                    {
+                        'syllable': 'del', 'is_stressed': False,
+                        'is_word_end': True
+                    },
+                    {'syllable': 'me', 'is_stressed': False},
+                    {
+                        'syllable': 'jor', 'is_stressed': True,
+                        'is_word_end': True
+                    },
+                    {'syllable': 'a', 'is_stressed': False},
+                    {'syllable': 'bri', 'is_stressed': True},
+                    {
+                        'syllable': 'go', 'is_stressed': False,
+                        'is_word_end': True
+                    }],
+                'rhythm': {
+                    'stress': '+---+--+-+-', 'type': 'pattern',
+                    'length': 11
+                }
+            }],
         'enjambment': {
             0: {
                 'type': 'tmesis',
