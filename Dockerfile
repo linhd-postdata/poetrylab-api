@@ -2,7 +2,6 @@ FROM python:alpine3.7
 ENV WORKERS 4
 ENV TIMEOUT 120
 ENV PORT 5000
-# We need do downgrade pip due to a bug with alpine in more recent versions
 RUN apk update &&\
     apk upgrade &&\
     apk add --no-cache g++ gfortran libstdc++ &&\
