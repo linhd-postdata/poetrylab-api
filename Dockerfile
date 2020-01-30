@@ -16,4 +16,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 RUN pip install --no-cache-dir gunicorn
 COPY poetrylab_api ./poetrylab_api
 EXPOSE $PORT
-CMD sh -c "gunicorn -b 0.0.0.0:${PORT} --workers ${WORKERS} --timeout ${TIMEOUT} poetrylab_api.app:app" ]
+CMD sh -c "gunicorn -b 0.0.0.0:${PORT} --workers ${WORKERS} --timeout ${TIMEOUT} poetrylab_api.app:app"
