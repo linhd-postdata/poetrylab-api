@@ -34,6 +34,179 @@ paths:
               schema:
                 type: object
                 example: {"scansion": [{"tokens": [{"word": [{"syllable": "Ja", "is_stressed": false}, {"syllable": "m\\u00e1s", "is_stressed": true}], "stress_position": -1}, {"word": [{"syllable": "en", "is_stressed": false, "has_sinaeresis": true}, {"syllable": "con", "is_stressed": false}, {"syllable": "tra", "is_stressed": false}, {"syllable": "r\\u00e9", "is_stressed": true}], "stress_position": -1}, {"word": [{"syllable": "m\\u00e1s", "is_stressed": true}], "stress_position": -1}, {"word": [{"syllable": "fiel", "is_stressed": true}], "stress_position": -1}, {"symbol": "ami-"}]}, {"tokens": [{"word": [{"syllable": "go", "is_stressed": true}], "stress_position": -1}, {"word": [{"syllable": "que", "is_stressed": false, "has_synalepha": true}], "stress_position": 0}, {"word": [{"syllable": "en", "is_stressed": true}], "stress_position": -1}, {"word": [{"syllable": "los", "is_stressed": false}], "stress_position": 0}, {"word": [{"syllable": "pe", "is_stressed": false, "has_sinaeresis": true}, {"syllable": "o", "is_stressed": true}, {"syllable": "res", "is_stressed": false}], "stress_position": -2}, {"word": [{"syllable": "mo", "is_stressed": false}, {"syllable": "men", "is_stressed": true}, {"syllable": "tos", "is_stressed": false}], "stress_position": -2}, {"word": [{"syllable": "a", "is_stressed": false, "has_sinaeresis": true}, {"syllable": "rri", "is_stressed": true}, {"syllable": "me", "is_stressed": false}], "stress_position": -2}]}, {"tokens": [{"word": [{"syllable": "y", "is_stressed": true}], "stress_position": -1}, {"word": [{"syllable": "no", "is_stressed": true}], "stress_position": -1}, {"word": [{"syllable": "me", "is_stressed": false}], "stress_position": 0}, {"word": [{"syllable": "tra", "is_stressed": true, "has_sinaeresis": true}, {"syllable": "e", "is_stressed": false}], "stress_position": -2}, {"word": [{"syllable": "mi", "is_stressed": false}], "stress_position": 0}, {"word": [{"syllable": "ver", "is_stressed": true}, {"syllable": "de", "is_stressed": false}], "stress_position": -2}]}, {"tokens": [{"word": [{"syllable": "a", "is_stressed": false, "has_sinaeresis": true}, {"syllable": "bri", "is_stressed": true}, {"syllable": "go", "is_stressed": false}], "stress_position": -2}, {"word": [{"syllable": "que", "is_stressed": false}], "stress_position": 0}, {"word": [{"syllable": "su", "is_stressed": false}], "stress_position": 0}, {"word": [{"syllable": "cuer", "is_stressed": true}, {"syllable": "po", "is_stressed": false, "has_synalepha": true}], "stress_position": -2}, {"word": [{"syllable": "a", "is_stressed": true, "has_sinaeresis": true}], "stress_position": -1}, {"word": [{"syllable": "mi", "is_stressed": false, "has_synalepha": true}], "stress_position": 0}, {"word": [{"syllable": "al", "is_stressed": true, "has_sinaeresis": true}, {"syllable": "ma", "is_stressed": false, "has_synalepha": true}], "stress_position": -2}, {"word": [{"syllable": "a", "is_stressed": false, "has_sinaeresis": true}, {"syllable": "ba", "is_stressed": false}, {"syllable": "ti", "is_stressed": true}, {"syllable": "da", "is_stressed": false, "has_synalepha": true}], "stress_position": -2}, {"word": [{"syllable": "y", "is_stressed": true, "has_synalepha": true}], "stress_position": -1}, {"word": [{"syllable": "a", "is_stressed": false, "has_sinaeresis": true}, {"syllable": "ni", "is_stressed": true}, {"syllable": "me", "is_stressed": false}], "stress_position": -2}]}, {"tokens": [{"word": [{"syllable": "d\\u00e1n", "is_stressed": true}, {"syllable": "do", "is_stressed": false}, {"syllable": "me", "is_stressed": false, "has_synalepha": true}], "stress_position": -3}, {"word": [{"syllable": "el", "is_stressed": false}], "stress_position": 0}, {"word": [{"syllable": "ca", "is_stressed": false}, {"syllable": "lor", "is_stressed": true}], "stress_position": -1}, {"word": [{"syllable": "del", "is_stressed": true}], "stress_position": -1}, {"word": [{"syllable": "me", "is_stressed": false}, {"syllable": "jor", "is_stressed": true}], "stress_position": -1}, {"word": [{"syllable": "a", "is_stressed": false, "has_sinaeresis": true}, {"syllable": "bri", "is_stressed": true}, {"syllable": "go", "is_stressed": false}], "stress_position": -2}, {"symbol": "."}]}], "enjambment": {"0": ["tmesis", ["ami", "go"]], "2": ["sirrematic", ["ADJ", "NOUN"]]}}
+            application/ld+json:
+              schema:
+                type: object
+                example: |+
+                  [
+                    {
+                      "@id": "http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Word/8677c76b-2b99-47af-b96c-aed82f71086c",
+                      "@type": [
+                        "http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Word",
+                        "http://www.w3.org/2002/07/owl#NamedIndividual"
+                      ],
+                      "http://postdata.linhd.uned.es/ontology/postdata-structuralElements#belongsToLine": [
+                        {
+                          "@id": "http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Line/3c3377e6-a177-4b11-ad20-60b18e7fed6c"
+                        }
+                      ],
+                      "http://postdata.linhd.uned.es/ontology/postdata-structuralElements#content": [
+                        {
+                          "@value": "los"
+                        }
+                      ]
+                    },
+                    {
+                      "@id": "http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Word/30795af6-7e82-4ef9-a851-4b16d3852c86",
+                      "@type": [
+                        "http://www.w3.org/2002/07/owl#NamedIndividual",
+                        "http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Word"
+                      ],
+                      "http://postdata.linhd.uned.es/ontology/postdata-structuralElements#belongsToLine": [
+                        {
+                          "@id": "http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Line/3c3377e6-a177-4b11-ad20-60b18e7fed6c"
+                        }
+                      ],
+                      "http://postdata.linhd.uned.es/ontology/postdata-structuralElements#content": [
+                        {
+                          "@value": "momentos"
+                        }
+                      ]
+                    }
+                  ]
+            application/rdf+xml:
+              schema:
+                type: string
+                example: |+
+                  <?xml version="1.0" encoding="UTF-8"?>
+                    <rdf:RDF
+                    xmlns="http://postdata.linhd.uned.es/ontology/postdata-structuralElements#"
+                    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                  >
+                      <rdf:Description rdf:about="http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Syllable/876167db-c354-4594-b168-1ca1005cfa79">
+                        <content rdf:datatype="http://www.w3.org/2001/XMLSchema#string">con</content>
+                        <belongsToWord rdf:resource="http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Word/a7b867c5-2cf9-4e47-8b4c-a816ca02b048"/>
+                        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+                        <rdf:type rdf:resource="http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Syllable"/>
+                      </rdf:Description>
+                      <rdf:Description rdf:about="http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Word/a7b867c5-2cf9-4e47-8b4c-a816ca02b048">
+                        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+                        <belongsToLine rdf:resource="http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Line/551ce1d7-c3f0-4325-9b46-f327ceda7ecb"/>
+                        <rdf:type rdf:resource="http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Word"/>
+                        <content rdf:datatype="http://www.w3.org/2001/XMLSchema#string">encontraré</content>
+                      </rdf:Description>
+                    </rdf:RDF>
+            application/n-triples:
+              schema:
+                type: string
+                example: |+
+                  <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Word/7461dac8-bd80-4447-9fcd-99063448b27f> <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#belongsToLine> <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Line/3fafbdda-0116-4fb6-b7ff-247a0187bd47> .
+                  <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Syllable/e1aa5835-ca2b-4665-993e-2c351a9f603e> <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#content> "el"^^<http://www.w3.org/2001/XMLSchema#string> .
+                  <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Word/390dcc21-9c77-4ba0-ab7b-fb06a7ff1555> <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#belongsToLine> <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Line/6b44b1b3-b672-4d13-ab87-75f29dae911f> .
+                  <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Syllable/ba62034c-5d48-40c8-a90e-0397b6b42c61> <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#content> "me"^^<http://www.w3.org/2001/XMLSchema#string> .
+                  <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Syllable/2e72b538-8475-4bc8-9c19-6179adcb0f95> <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#belongsToWord> <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Word/9b6e317f-4836-4489-aa7e-53056b81c634> .
+                  <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Line/c94678c4-6863-48a2-a720-ab13096444bd> <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#content> "d\u00E1ndome el calor del mejor abrigo ."^^<http://www.w3.org/2001/XMLSchema#string> .
+                  <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Syllable/1110a6c1-a6f3-45b5-b60f-e94bbf9b4c8a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+            application/x-turtle:
+              schema:
+                type: string
+                example: |+
+                  @prefix : <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#> .
+                  @prefix owl: <http://www.w3.org/2002/07/owl#> .
+                  @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+                  @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+                  @prefix xml: <http://www.w3.org/XML/1998/namespace> .
+                  @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+                  <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Syllable/00348bbb-ac5f-4b15-b338-39272b0bab82> a :Syllable,
+                          owl:NamedIndividual ;
+                      :belongsToWord <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Word/a81aabb2-44f8-48cf-83d4-e8dbc38ace4d> ;
+                      :content "go"^^xsd:string .
+
+                  <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Syllable/003599cc-6b0e-4fa0-b1b3-3c04f1a87fe8> a :Syllable,
+                          owl:NamedIndividual ;
+                      :belongsToWord <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Word/9681ea56-fa18-4e72-ae3b-04c6c6f35919> ;
+                      :content "a"^^xsd:string .
+
+                  <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Syllable/037a5b38-02df-4f95-99f0-a58fe540158d> a :Syllable,
+                          owl:NamedIndividual ;
+                      :belongsToWord <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Word/732b7142-d726-4a69-9915-98642adabc0c> ;
+                      :content "me"^^xsd:string .
+            text/turtle:
+              schema:
+                type: string
+                example: |+
+                  @prefix : <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#> .
+                  @prefix owl: <http://www.w3.org/2002/07/owl#> .
+                  @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+                  @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+                  @prefix xml: <http://www.w3.org/XML/1998/namespace> .
+                  @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+                  <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Syllable/00348bbb-ac5f-4b15-b338-39272b0bab82> a :Syllable,
+                          owl:NamedIndividual ;
+                      :belongsToWord <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Word/a81aabb2-44f8-48cf-83d4-e8dbc38ace4d> ;
+                      :content "go"^^xsd:string .
+
+                  <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Syllable/003599cc-6b0e-4fa0-b1b3-3c04f1a87fe8> a :Syllable,
+                          owl:NamedIndividual ;
+                      :belongsToWord <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Word/9681ea56-fa18-4e72-ae3b-04c6c6f35919> ;
+                      :content "a"^^xsd:string .
+
+                  <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Syllable/037a5b38-02df-4f95-99f0-a58fe540158d> a :Syllable,
+                          owl:NamedIndividual ;
+                      :belongsToWord <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Word/732b7142-d726-4a69-9915-98642adabc0c> ;
+                      :content "me"^^xsd:string .
+            text/rdf+n3:
+              schema:
+                type: string
+                example: |+
+                  @prefix : <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#> .
+                  @prefix owl: <http://www.w3.org/2002/07/owl#> .
+                  @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+                  @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+                  @prefix xml: <http://www.w3.org/XML/1998/namespace> .
+                  @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+                  <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Syllable/00348bbb-ac5f-4b15-b338-39272b0bab82> a :Syllable,
+                          owl:NamedIndividual ;
+                      :belongsToWord <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Word/a81aabb2-44f8-48cf-83d4-e8dbc38ace4d> ;
+                      :content "go"^^xsd:string .
+
+                  <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Syllable/003599cc-6b0e-4fa0-b1b3-3c04f1a87fe8> a :Syllable,
+                          owl:NamedIndividual ;
+                      :belongsToWord <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Word/9681ea56-fa18-4e72-ae3b-04c6c6f35919> ;
+                      :content "a"^^xsd:string .
+
+                  <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Syllable/00b7b606-b593-4471-832a-f60642d94340> a :Syllable,
+                          owl:NamedIndividual ;
+                      :belongsToWord <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Word/f70ea0a4-5a0e-427a-b732-1e943ef7b158> ;
+                      :content "me"^^xsd:string .
+            text/n3:
+              schema:
+                type: string
+                example: |+
+                  @prefix : <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#> .
+                  @prefix owl: <http://www.w3.org/2002/07/owl#> .
+                  @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+                  @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+                  @prefix xml: <http://www.w3.org/XML/1998/namespace> .
+                  @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+                  <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Syllable/00348bbb-ac5f-4b15-b338-39272b0bab82> a :Syllable,
+                          owl:NamedIndividual ;
+                      :belongsToWord <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Word/a81aabb2-44f8-48cf-83d4-e8dbc38ace4d> ;
+                      :content "go"^^xsd:string .
+
+                  <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Syllable/003599cc-6b0e-4fa0-b1b3-3c04f1a87fe8> a :Syllable,
+                          owl:NamedIndividual ;
+                      :belongsToWord <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Word/9681ea56-fa18-4e72-ae3b-04c6c6f35919> ;
+                      :content "a"^^xsd:string .
+
+                  <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Syllable/00b7b606-b593-4471-832a-f60642d94340> a :Syllable,
+                          owl:NamedIndividual ;
+                      :belongsToWord <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Word/f70ea0a4-5a0e-427a-b732-1e943ef7b158> ;
+                      :content "me"^^xsd:string .
       parameters:
         - in: query
           name: operations
