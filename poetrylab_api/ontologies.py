@@ -16,12 +16,20 @@ ONTOLOGIES = {
 
 
 def get_scansion_graph(scansion):
+    """Transform a scansion dictionary into a compliant LOD graph.
+    :param scansion: Dictionary with a Rantanplan-like scansion analysis
+    :return: RDFLib Graph with the individuals from scansion
+    """
     structural_onto = get_ontology(ONTOLOGIES["structural"]).load()
     onto = add_structural_individuals(scansion, structural_onto)
     return onto_to_graph(onto)
 
 
 def onto_to_graph(onto):
+    """Convert an OWLReady2 ontology graph to RDFLib.
+    :param onto: OWLReady2 ontology
+    :return: RDFLib Graph
+    """
     with io.BytesIO() as file:
         onto.save(file=file, format="rdfxml", filter=filter_individuals)
         rdf = file.getvalue().decode("utf8")
@@ -29,13 +37,25 @@ def onto_to_graph(onto):
 
 
 def filter_individuals(graph, s, *args):
-    # Let's just keep the individuals of the classes we are interested in
+    """Filtering function to keep just the individuals of the classes
+    we are interested in when serializing.
+    :param graph: OWLReady2 graph
+    :param s: storeid specifying an individual in graph.onto
+    :return: Boolean deciding whether the instance specified by its storeid
+             should be returned or not
+    """
     classes = [graph.onto.Line, graph.onto.Word, graph.onto.Syllable]
     return s >= 0 and any(isinstance(graph.onto.world._get_by_storid(s), cls)
                           for cls in classes)
 
 
 def add_structural_individuals(scansion, onto):
+    """Transform a Rantanplan scansion dictionary into an OWLReady ontology.
+    This function performs all changes directly on onto.
+    :param scansion: Dictionary with a Rantanplan-like scansion analysis
+    :param onto: OWLReady2 ontology
+    :return: The modified ontology onto
+    """
     for line in scansion:
         if "tokens" not in line:
             continue
@@ -65,6 +85,10 @@ def add_structural_individuals(scansion, onto):
 
 
 def join_tokens(tokens):
+    """Join all words from a list of tokens into a string.
+    :param tokens: List of dictionaries representing tokens
+    :return: String of words
+    """
     output = []
     for token in tokens:
         item = join_syllables(token)
@@ -73,6 +97,10 @@ def join_tokens(tokens):
 
 
 def join_syllables(token):
+    """Join all symbols and syllables from a list of tokens into a string."
+    :param tokens: List of dictionaries representing tokens
+    :return: String of syllables
+    """
     if "symbol" in token:
         return token["symbol"]
     else:
