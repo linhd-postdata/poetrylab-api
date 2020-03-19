@@ -1,4 +1,5 @@
 #!/usr/bin/python
+import os
 import connexion
 from flask_cors import CORS
 
@@ -10,5 +11,5 @@ app.app.config['JSON_SORT_KEYS'] = False
 # Adding CORS support
 CORS(app.app)
 
-if __name__ == "__main__":
-    app.run(port=5000)
+if __name__ == "__main__":  # pragma: no cover
+    app.run(port=os.environ.get("PORT", 5000))
