@@ -35,6 +35,6 @@ setup(
     zip_safe=False,
     python_requires='>3.6',
     setup_requires=['pytest-runner'],
-    tests_require=['pytest'],
+    tests_require=['pytest', 'pytest-cov', 'snapshottest'],
     install_requires=read('requirements.txt').splitlines()
 )
