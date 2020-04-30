@@ -44,7 +44,7 @@ def analyze(poem, operations):
                        - "enjambment": Performs enjambment detection
     :return: A dict with a key for each operation and its analysis
     """
-    analysis = {}
+    output = {}
     for operation in operations:
         # Caching pipelines between calls
         if operation not in _load_pipeline:
@@ -52,7 +52,7 @@ def analyze(poem, operations):
             _load_pipeline[operation] = pipeline() if pipeline else lambda x: x
         poem_doc = _load_pipeline[operation](poem)
         if operation == "scansion":
-            analysis[operation] = get_traceback(get_scansion, poem_doc)
+            output[operation] = get_traceback(get_scansion, poem_doc)
         if operation == "enjambment":
             output[operation] = get_traceback(get_enjambment, poem_doc)
         if is_available(operation):
