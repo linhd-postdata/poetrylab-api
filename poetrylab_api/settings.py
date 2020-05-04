@@ -5,8 +5,8 @@ ADDONS = {
     "entities": {
         "health": {
             "uri": os.environ.get(
-                "NER_URI",
-                "http://localhost:8080/api"
+                "NER_HEALTH_URI",
+                "http://localhost:8080/api/"
             ),
             "method": "GET",
             "code": 200,

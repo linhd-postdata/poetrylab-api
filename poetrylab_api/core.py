@@ -53,11 +53,14 @@ def analyze(poem, operations):
         poem_doc = _load_pipeline[operation](poem)
         if operation == "scansion":
             output[operation] = get_traceback(get_scansion, poem_doc)
-        if operation == "enjambment":
+        elif operation == "enjambment":
             output[operation] = get_traceback(get_enjambment, poem_doc)
-        if is_available(operation):
-            output[operation] = perform(operation, poem)
-
+        else:
+            availability = is_available(operation)
+            if "error" not in availability:
+                output[operation] = perform(operation, poem)
+            else:
+                output[operation] = availability
     return output
 
 

@@ -11,11 +11,27 @@ def is_available(operation):
             response = requests.request(health["method"], health["uri"])
         except Exception as err:
             return {
-                "error": (f"Error retrieving or decoding JSON response from "
+                "error": (f"Error retrieving health response from "
                           f"{health['uri']}: {str(err)}")
             }
-        return response.status_code == health["code"]
-    return False
+        if response.status_code != health["code"]:
+            availability = {
+                "error": (f"Error retrieving health response from "
+                          f"{health['uri']}. "
+                          f"Expected status code {health['code']}, "
+                          f"but got {response.status_code}"),
+                "status": response.status_code,
+                "expected": health["code"],
+            }
+        else:
+            availability = {
+                "success": "Health check OK"
+            }
+    else:
+        availability = {
+            "error": f"Operation '{operation}' not listed as addon."
+        }
+    return availability
 
 
 def perform(operation, poem):
