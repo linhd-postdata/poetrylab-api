@@ -1,0 +1,13 @@
+version: '3'
+services:
+  ner:
+    image: linhdpostdata/hismetag
+    expose:
+      - "8080"
+  api:
+    image: linhdpostdata/poetrylab-api
+    environment:
+    - NER_URI=http://ner:8080/api/rest/process/text
+    - NER_HEALTH_URI=http://ner:8080/api/
+    ports:
+      - "5000:5000"
