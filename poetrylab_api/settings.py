@@ -21,7 +21,11 @@ ADDONS = {
                 "name": "texto",
                 "type": str
             }],
+            # A specific path in the returned object
+            # can also be specified if needed, e.g.,
             # "output": "entities",
+            # will return the value of the key "entities"
+            # of the JSON response of the endpoint.
         }
     }
 }
