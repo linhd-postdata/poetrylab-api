@@ -1,6 +1,6 @@
 FROM python:alpine3.7
 ENV WORKERS 4
-ENV TIMEOUT 120
+ENV TIMEOUT 300
 ENV PORT 5000
 RUN apk update &&\
     apk upgrade &&\
