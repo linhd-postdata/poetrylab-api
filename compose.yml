@@ -6,8 +6,7 @@ services:
       - "8080"
     restart: on-failure
   api:
-    # image: linhdpostdata/poetrylab-api
-    build: .
+    image: linhdpostdata/poetrylab-api
     environment:
     - NER_URI=http://ner:8080/api/rest/process/text
     - NER_HEALTH_URI=http://ner:8080/api/
