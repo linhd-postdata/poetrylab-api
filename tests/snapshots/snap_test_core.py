@@ -1629,3 +1629,7 @@ snapshots['test_get_analysis_scansion 1'] = GenericRepr('<Response 8324 bytes [2
 snapshots['test_get_analysis_enjambment 1'] = GenericRepr('<Response 114 bytes [200 OK]>')
 
 snapshots['test_get_analysis_enjambment_scansion 1'] = GenericRepr('<Response 8438 bytes [200 OK]>')
+
+snapshots['test_get_analysis_unavailable_addon 1'] = GenericRepr('<Response 29 bytes [200 OK]>')
+
+snapshots['test_get_analysis_addon 1'] = GenericRepr('<Response 30 bytes [200 OK]>')

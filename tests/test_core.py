@@ -1,4 +1,5 @@
 import pytest
+from contextlib import ExitStack
 from unittest import mock
 
 from poetrylab_api import app
@@ -34,6 +35,36 @@ def test_analyze_enjambment_scansion(snapshot, poem):
     snapshot.assert_match(output)
 
 
+def test_analyze_addon(snapshot, poem):
+    module = "poetrylab_api.core"
+    is_available = {"success": True}
+    perform = {"entities": []}
+    operations = ["entities"]
+    with ExitStack() as stack:
+        managers = (
+            mock.patch(f"{module}.is_available", return_value=is_available),
+            mock.patch(f"{module}.perform", return_value=perform),
+        )
+        [stack.enter_context(manager) for manager in managers]
+        output = analyze(poem.decode("utf8"), operations)
+        assert output["entities"] == perform
+
+
+def test_analyze_unavailable_addon(snapshot, poem):
+    module = "poetrylab_api.core"
+    is_available = {"error": True}
+    perform = {"entities": []}
+    operations = ["entities"]
+    with ExitStack() as stack:
+        managers = (
+            mock.patch(f"{module}.is_available", return_value=is_available),
+            mock.patch(f"{module}.perform", return_value=perform),
+        )
+        [stack.enter_context(manager) for manager in managers]
+        output = analyze(poem.decode("utf8"), operations)
+        assert "error" in output["entities"]
+
+
 def test_get_analysis_scansion(snapshot, poem):
     with app.app.test_request_context('/analysis'):
         operations = ["scansion"]
@@ -63,3 +94,35 @@ def test_get_traceback():
     output = get_traceback(raise_value_error, None)
     assert output["error"] == 'ValueError'
     assert output["message"] == 'Error raised'
+
+
+def test_get_analysis_addon(snapshot, poem):
+    module = "poetrylab_api.core"
+    is_available = {"success": True}
+    perform = {"entities": []}
+    operations = ["entities"]
+    with ExitStack() as stack:
+        managers = (
+            mock.patch(f"{module}.is_available", return_value=is_available),
+            mock.patch(f"{module}.perform", return_value=perform),
+            app.app.test_request_context('/analysis')
+        )
+        [stack.enter_context(manager) for manager in managers]
+        output = get_analysis(poem, operations)
+        snapshot.assert_match(output)
+
+
+def test_get_analysis_unavailable_addon(snapshot, poem):
+    module = "poetrylab_api.core"
+    is_available = {"error": True}
+    perform = {"entities": []}
+    operations = ["entities"]
+    with ExitStack() as stack:
+        managers = (
+            mock.patch(f"{module}.is_available", return_value=is_available),
+            mock.patch(f"{module}.perform", return_value=perform),
+            app.app.test_request_context('/analysis')
+        )
+        [stack.enter_context(manager) for manager in managers]
+        output = get_analysis(poem, operations)
+        snapshot.assert_match(output)

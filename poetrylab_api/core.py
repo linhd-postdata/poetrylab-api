@@ -15,6 +15,8 @@ from .serializers import serialize
 # load_pipeline should work as a "singleton"
 _load_pipeline = {}
 
+from .addons import is_available, perform
+
 
 def get_analysis(poem, operations):
     """
@@ -42,7 +44,7 @@ def analyze(poem, operations):
                        - "enjambment": Performs enjambment detection
     :return: A dict with a key for each operation and its analysis
     """
-    analysis = {}
+    output = {}
     for operation in operations:
         # Caching pipelines between calls
         if operation not in _load_pipeline:
@@ -50,10 +52,16 @@ def analyze(poem, operations):
             _load_pipeline[operation] = pipeline() if pipeline else lambda x: x
         poem_doc = _load_pipeline[operation](poem)
         if operation == "scansion":
-            analysis[operation] = get_traceback(get_scansion, poem_doc)
-        if operation == "enjambment":
-            analysis[operation] = get_traceback(get_enjambment, poem_doc)
-    return analysis
+            output[operation] = get_traceback(get_scansion, poem_doc)
+        elif operation == "enjambment":
+            output[operation] = get_traceback(get_enjambment, poem_doc)
+        else:
+            availability = is_available(operation)
+            if "error" not in availability:
+                output[operation] = perform(operation, poem)
+            else:
+                output[operation] = availability
+    return output
 
 
 def get_traceback(func, *args, **kwargs):

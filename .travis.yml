@@ -14,12 +14,12 @@ install:
 - pip --version
 - pip install pytest-cov snapshottest
 - pip install https://github.com/versae/snapshottest/archive/master.zip
-- pip install "spacy==2.2.3" "spacy-lookup==0.1.0" spacy-affixes
+- pip install "spacy==2.2.4" "spacy-lookups-data==0.3.0" spacy-affixes
 - python -m spacy download es_core_news_md
 - python -m spacy_affixes download es
 - pip install -e .
 script:
-- pytest -v --cov=poetrylab_api --cov-report term-missing tests/
+- pytest -v --cov=poetrylab_api --cov-report term-missing tests/ --assert=plain
 notifications:
   email:
     on_success: never

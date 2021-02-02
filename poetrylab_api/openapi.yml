@@ -216,5 +216,5 @@ paths:
             type: array
             items:
               type: string
-            default: [scansion,enjambment]
-            example: [scansion,enjambment]
+            default: [scansion,enjambment,entities]
+            example: [scansion,enjambment,entities]
