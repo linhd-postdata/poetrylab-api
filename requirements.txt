@@ -1,6 +1,6 @@
 requests==2.23.0
 connexion[swagger-ui]==2.6.0
-flask-cors==3.0.8
+flask-cors==3.0.9
 spacy==2.2.4
 spacy-lookup==0.1.0
 spacy-lookups-data==0.3.0
