@@ -218,3 +218,13 @@ paths:
               type: string
             default: [scansion,enjambment,entities]
             example: [scansion,enjambment,entities]
+        - in: query
+          name: rhyme_analysis
+          description: Choose if rhyme analysis is to be performed
+          required: false
+          schema:
+            type: boolean
+            items:
+              type: boolean
+            default: false
+            example: true
