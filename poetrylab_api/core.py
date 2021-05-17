@@ -4,21 +4,17 @@ import traceback
 
 import connexion
 from flask import Response
-
 from jollyjumper.core import get_enjambment
-from jollyjumper.pipeline import load_pipeline as enjambment_pipeline
 from rantanplan.core import get_scansion
-from rantanplan.pipeline import load_pipeline as scansion_pipeline
 
+from .addons import is_available, perform
 from .serializers import serialize
 
 # load_pipeline should work as a "singleton"
 _load_pipeline = {}
 
-from .addons import is_available, perform
 
-
-def get_analysis(poem, operations):
+def get_analysis(poem, operations, rhyme_analysis=False):
     """
     View for /analysis that perform an analysis of poem running the different
     operations on it.
@@ -26,22 +22,24 @@ def get_analysis(poem, operations):
     :param operations: List of strings with the operations to be performed:
                        - "scansion": Performs scansion analysis
                        - "enjambment": Performs enjambment detection
+    :param rhyme_analysis: Whether or not rhyme analysis is to be performed
     :return: Response object with a dict with a key for each operation and its
              analysis or a serialized version of it
     """
-    analysis = analyze(poem.decode('utf-8'), operations)
+    analysis = analyze(poem.decode('utf-8'), operations, rhyme_analysis)
     mime = connexion.request.headers.get("Accept")
     serialization = serialize(analysis, mime)
     return Response(serialization, mimetype=mime)
 
 
-def analyze(poem, operations):
+def analyze(poem, operations, rhyme_analysis=False):
     """
     Perform an analysis of poem running the different operations on it.
     :param poem: A string with the text of the poem
     :param operations: List of strings with the operations to be performed:
                        - "scansion": Performs scansion analysis
                        - "enjambment": Performs enjambment detection
+    :param rhyme_analysis: Whether or not rhyme analysis is to be performed
     :return: A dict with a key for each operation and its analysis
     """
     output = {}
@@ -52,7 +50,8 @@ def analyze(poem, operations):
             _load_pipeline[operation] = pipeline() if pipeline else lambda x: x
         poem_doc = _load_pipeline[operation](poem)
         if operation == "scansion":
-            output[operation] = get_traceback(get_scansion, poem_doc)
+            output[operation] = get_traceback(get_scansion, poem_doc,
+                                              rhyme_analysis=rhyme_analysis)
         elif operation == "enjambment":
             output[operation] = get_traceback(get_enjambment, poem_doc)
         else:

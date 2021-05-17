@@ -28,6 +28,22 @@ abrigo"""
     snapshot.assert_match(json.loads(response.data))
 
 
+def test_analysis_scansion_no_structure(snapshot, client):
+    text = """verde
+abrigo"""
+    response = client.post('/analysis?operations=scansion&rhyme_analysis=true', data=text)
+    assert response.status_code == 200
+    snapshot.assert_match(json.loads(response.data))
+
+
+def test_analysis_scansion_structure(snapshot, client):
+    text = """Pongo un pareado
+me ha salido cuadrado"""
+    response = client.post('/analysis?operations=scansion&rhyme_analysis=true', data=text)
+    assert response.status_code == 200
+    snapshot.assert_match(json.loads(response.data))
+
+
 def test_analysis_enjambment_scansion(snapshot, client):
     text = """Jamás encontraré más fiel ami-
 go que en los peores momentos arrime
@@ -36,6 +52,21 @@ abrigo que su cuerpo a mi alma abatida y anime
 dándome el calor del mejor abrigo."""
     response = client.post(
         '/analysis?operations=enjambment&operations=scansion', data=text
+    )
+    assert response.status_code == 200
+    snapshot.assert_match(json.loads(response.data))
+
+
+def test_analysis_enjambment_scansion_structure(snapshot, client):
+    text = """La cebolla es 
+cerrada y pobre:
+escarcha de tus días
+y de mis noches.
+Hambre y 
+hielo negro y 
+grande y redonda."""
+    response = client.post(
+        '/analysis?operations=enjambment&operations=scansion&rhyme_analysis=true', data=text
     )
     assert response.status_code == 200
     snapshot.assert_match(json.loads(response.data))
