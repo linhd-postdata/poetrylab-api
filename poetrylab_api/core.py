@@ -1,5 +1,6 @@
 #!/usr/bin/python
 import io
+import json
 import traceback
 
 import connexion
@@ -28,8 +29,8 @@ def get_analysis(poem, operations, rhyme_analysis=False):
     """
     analysis = analyze(poem.decode('utf-8'), operations, rhyme_analysis)
     mime = connexion.request.headers.get("Accept")
-    serialization = serialize(analysis, mime)
-    return Response(serialization, mimetype=mime)
+    # serialization = serialize(analysis, mime)
+    return Response(json.dumps(analysis), mimetype=mime)
 
 
 def analyze(poem, operations, rhyme_analysis=False):
@@ -51,7 +52,10 @@ def analyze(poem, operations, rhyme_analysis=False):
         poem_doc = _load_pipeline[operation](poem)
         if operation == "scansion":
             output[operation] = get_traceback(get_scansion, poem_doc,
-                                              rhyme_analysis=rhyme_analysis)
+                                              rhyme_analysis=rhyme_analysis,
+                                              always_return_rhyme=rhyme_analysis,
+                                              split_stanzas_on='\n{2,}',
+                                              alternative_output=True)
         elif operation == "enjambment":
             output[operation] = get_traceback(get_enjambment, poem_doc)
         else:
