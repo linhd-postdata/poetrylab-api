@@ -72,27 +72,27 @@ grande y redonda."""
     snapshot.assert_match(json.loads(response.data))
 
 
-@pytest.mark.parametrize("accept_header", (
-    "application/ld+json",
-    "application/rdf+xml",
-    "application/n-triples",
-    "text/turtle",
-    "text/n3",
-))
-def test_analysis_enjambment_scansion_rdf(snapshot, client, accept_header):
-    text = """Jamás encontraré más fiel ami-
-go que en los peores momentos arrime
-y no me trae mi verde
-abrigo que su cuerpo a mi alma abatida y anime
-dándome el calor del mejor abrigo."""
-    response = client.post(
-        '/analysis?operations=enjambment&operations=scansion',
-        data=text,
-        headers={'Accept': accept_header},
-    )
-    assert response.status_code == 200
-    Graph().parse(
-        data=response.data.decode("utf8"),
-        format=accept_header,
-    )
-    assert True
+# @pytest.mark.parametrize("accept_header", (
+#     "application/ld+json",
+#     "application/rdf+xml",
+#     "application/n-triples",
+#     "text/turtle",
+#     "text/n3",
+# ))
+# def test_analysis_enjambment_scansion_rdf(snapshot, client, accept_header):
+#     text = """Jamás encontraré más fiel ami-
+# go que en los peores momentos arrime
+# y no me trae mi verde
+# abrigo que su cuerpo a mi alma abatida y anime
+# dándome el calor del mejor abrigo."""
+#     response = client.post(
+#         '/analysis?operations=enjambment&operations=scansion',
+#         data=text,
+#         headers={'Accept': accept_header},
+#     )
+#     assert response.status_code == 200
+#     Graph().parse(
+#         data=response.data.decode("utf8"),
+#         format=accept_header,
+#     )
+#     assert True
