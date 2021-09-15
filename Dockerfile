@@ -1,16 +1,16 @@
-FROM python:alpine3.7
+FROM python:3.7.0
 ENV WORKERS 4
 ENV TIMEOUT 300
 ENV PORT 5000
-RUN apk update &&\
-    apk upgrade &&\
-    apk add --no-cache g++ gfortran libstdc++ &&\
+RUN apt-get update -y &&\
+    apt-get install g++ gfortran libstdc++ -y &&\
     pip install -U pip &&\
     pip install --no-cache-dir numpy &&\
     pip install --no-cache-dir spacy &&\
     python -m spacy download es_core_news_md
 WORKDIR /usr/src/app
 COPY requirements.txt ./
+RUN pip install Cython
 RUN pip install --no-cache-dir -r requirements.txt
 RUN pip install --no-cache-dir gunicorn
 COPY poetrylab_api ./poetrylab_api
