@@ -8,6 +8,136 @@ servers:
   - url: http://localhost:5000/
     description: Test server
 paths:
+  /poeticWorks:
+    get:
+      summary: List of all the poeticWorks
+      description: Gets list of all the poeticWorks
+      operationId: poetrylab_api.get_poeticWorks
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                example: []
+
+  /authors:
+    get:
+      summary: List of all the poeticWorks
+      description: Gets list of all the poeticWorks
+      operationId: poetrylab_api.get_authors
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                example: [ ]
+
+  /manifestations:
+    get:
+      summary: List of all the manifestations
+      description: Gets list of all the manifestations
+      operationId: poetrylab_api.get_manifestations
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                example: []
+
+  /author/{name}:
+    get:
+      description: Given an author obtain all the data about the author
+      summary: Given an author obtain all the data about the author
+      operationId: poetrylab_api.get_author
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                example: {}
+    parameters:
+      - name: name
+        in: path
+        description: Name of the author
+        required: true
+        schema:
+          type: string
+        style: simple
+
+  /book/{title}:
+    get:
+      summary: Given a book obtain the poetic works
+      description: Obtain all the data about the book
+      operationId: poetrylab_api.get_book
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                example: { }
+      parameters:
+        - name: title
+          in: path
+          description: Title of the book
+          required: true
+          schema:
+            type: string
+          style: simple
+
+  /redaction/{name}:
+    get:
+      summary: Given a redaction obtain the poetic works
+      description: Obtain all the data about the book
+      operationId: poetrylab_api.get_redaction
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                example: {}
+      parameters:
+        - name: name
+          in: path
+          description: Name of the redaction
+          required: true
+          schema:
+            type: string
+          style: simple
+
+  /poeticWork/{title}:
+    get:
+      summary: Given a poetic work obtain all the expresions (redactions) of a poetic work and infor about author and books
+      description: Given a poetic work obtain all the expresions (redactions) of a poetic work and infor about author and books
+      operationId: poetrylab_api.get_poeticWork
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                example: {}
+      parameters:
+        - name: title
+          in: path
+          description: Name of the poeticWork
+          required: true
+          schema:
+            type: string
+          style: simple
+
   /analysis:
     post:
       summary: Analyses a poem

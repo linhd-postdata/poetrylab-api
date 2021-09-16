@@ -2,6 +2,7 @@
 import io
 import json
 import traceback
+import stardog
 
 import connexion
 from flask import Response
@@ -10,9 +11,13 @@ from rantanplan.core import get_scansion
 
 from .addons import is_available, perform
 from .serializers import serialize
+from urllib.parse import unquote
 
 # load_pipeline should work as a "singleton"
 _load_pipeline = {}
+
+dumb_mode = True
+dumb_query = 'select * { ?a ?p ?o }'
 
 
 def get_analysis(poem, operations, rhyme_analysis=False):
@@ -88,3 +93,99 @@ def get_traceback(func, *args, **kwargs):
             "message": str(exc),
             "trace": trace,
         }
+
+
+def get_poeticWorks():
+    if dumb_mode:
+        create_dumb_database()
+    conn, admin, database_name = conntect_to_database()
+    query = dumb_query
+    results = conn.select(query, content_type=stardog.content_types.SPARQL_JSON)
+    return results
+
+
+def get_poeticWork(title):
+    title = unquote(title)
+    if dumb_mode:
+        create_dumb_database()
+    conn, admin, database_name = conntect_to_database()
+    query = dumb_query
+    results = conn.select(query, content_type=stardog.content_types.SPARQL_JSON)
+    return results
+
+def get_authors():
+    if dumb_mode:
+        create_dumb_database()
+    conn, admin, database_name = conntect_to_database()
+    query = dumb_query
+    results = conn.select(query, content_type=stardog.content_types.SPARQL_JSON)
+    return results
+
+def get_author(name):
+    name = unquote(name)
+    if dumb_mode:
+        create_dumb_database()
+    conn, admin, database_name = conntect_to_database()
+    query = dumb_query
+    results = conn.select(query, content_type=stardog.content_types.SPARQL_JSON)
+    return results
+
+def get_manifestations():
+    if dumb_mode:
+        create_dumb_database()
+    conn, admin, database_name = conntect_to_database()
+    query = dumb_query
+    results = conn.select(query, content_type=stardog.content_types.SPARQL_JSON)
+    return results
+
+
+def get_redaction(name):
+    name = unquote(name)
+    if dumb_mode:
+        create_dumb_database()
+    conn, admin, database_name = conntect_to_database()
+    query = dumb_query
+    results = conn.select(query, content_type=stardog.content_types.SPARQL_JSON)
+    return results
+
+
+def get_book(title):
+    title = unquote(title)
+    if dumb_mode:
+        create_dumb_database()
+    conn, admin, database_name = conntect_to_database()
+    query = dumb_query
+    results = conn.select(query, content_type=stardog.content_types.SPARQL_JSON)
+    return results
+
+
+def conntect_to_database():
+    connection_details = {
+        'endpoint': 'http://localhost:5820',
+        'username': 'admin',
+        'password': 'admin'
+    }
+    database_name = "test_database"
+    with stardog.Admin(**connection_details) as admin:
+        if database_name in [db.name for db in admin.databases()]:
+            return stardog.Connection(database_name, **connection_details), admin, database_name
+        else:
+            raise Exception(f"No database with the name: {database_name}")
+
+def create_dumb_database():
+    connection_details = {
+        'endpoint': 'http://localhost:5820',
+        'username': 'admin',
+        'password': 'admin',
+    }
+    database_name = "test_database"
+    with stardog.Admin(**connection_details) as admin:
+        if database_name in [db.name for db in admin.databases()]:
+            admin.database(database_name).drop()
+        db = admin.new_database(database_name)
+
+        conn = stardog.Connection(database_name, **connection_details)
+        conn.begin()
+        conn.add(stardog.content.File('poetrylab_api/example.ttl'))
+        conn.commit()  # commit the transaction
+        conn.__exit__()
