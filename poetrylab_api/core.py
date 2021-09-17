@@ -15,7 +15,7 @@ from .serializers import serialize
 _load_pipeline = {}
 
 
-def get_analysis(poem, operations, rhyme_analysis=False):
+def get_analysis(poem, operations, rhyme_analysis=False, alternative_output=False):
     """
     View for /analysis that perform an analysis of poem running the different
     operations on it.
@@ -27,13 +27,13 @@ def get_analysis(poem, operations, rhyme_analysis=False):
     :return: Response object with a dict with a key for each operation and its
              analysis or a serialized version of it
     """
-    analysis = analyze(poem.decode('utf-8'), operations, rhyme_analysis)
+    analysis = analyze(poem.decode('utf-8'), operations, rhyme_analysis, alternative_output)
     mime = connexion.request.headers.get("Accept")
     # serialization = serialize(analysis, mime)
     return Response(json.dumps(analysis), mimetype=mime)
 
 
-def analyze(poem, operations, rhyme_analysis=False):
+def analyze(poem, operations, rhyme_analysis=False, alternative_output=False):
     """
     Perform an analysis of poem running the different operations on it.
     :param poem: A string with the text of the poem
@@ -55,7 +55,7 @@ def analyze(poem, operations, rhyme_analysis=False):
                                               rhyme_analysis=rhyme_analysis,
                                               always_return_rhyme=rhyme_analysis,
                                               split_stanzas_on='\n{2,}',
-                                              alternative_output=True)
+                                              alternative_output=alternative_output)
         elif operation == "enjambment":
             output[operation] = get_traceback(get_enjambment, poem_doc)
         else:
