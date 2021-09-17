@@ -72,6 +72,21 @@ grande y redonda."""
     snapshot.assert_match(json.loads(response.data))
 
 
+def test_analysis_enjambment_scansion_structure_alternative_output(snapshot, client):
+    text = """La cebolla es 
+cerrada y pobre:
+escarcha de tus días
+y de mis noches.
+Hambre y 
+hielo negro y 
+grande y redonda."""
+    response = client.post(
+        '/analysis?operations=enjambment&operations=scansion&rhyme_analysis=true&alternative_output=true', data=text
+    )
+    assert response.status_code == 200
+    snapshot.assert_match(json.loads(response.data))
+
+
 # @pytest.mark.parametrize("accept_header", (
 #     "application/ld+json",
 #     "application/rdf+xml",

@@ -48,6 +48,14 @@ def test_analyze_scansion_structure(snapshot, poem_2):
     snapshot.assert_match(output)
 
 
+def test_analyze_scansion_structure_alternative_output(snapshot, poem_2):
+    operations = ["scansion"]
+    rhyme_analysis = True
+    alternative_output = True
+    output = analyze(poem_2.decode("utf8"), operations, rhyme_analysis, alternative_output)
+    snapshot.assert_match(output)
+
+
 def test_analyze_enjambment(snapshot, poem):
     operations = ["enjambment"]
     output = analyze(poem.decode("utf8"), operations)

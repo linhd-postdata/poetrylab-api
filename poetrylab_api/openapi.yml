@@ -228,3 +228,13 @@ paths:
               type: boolean
             default: false
             example: true
+        - in: query
+          name: alternative_output
+          description: Choose if new output is to be returned.
+          required: false
+          schema:
+            type: boolean
+            items:
+              type: boolean
+            default: false
+            example: true
