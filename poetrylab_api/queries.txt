@@ -54,13 +54,15 @@
 
                 service fts:textMatch {
                     [] fts:query "$*" ;  # Replace $ by query
-                        fts:limit $limit;
+                        # fts:limit 10;
                         fts:score ?score ;
                         fts:result ?resultText .
                 }
 
             }
         }
+        order by desc(?score)
+        limit $limit
 
     ''',
   'authors':
@@ -100,7 +102,7 @@
                 [] fts:query "$*" ;  # Replace $ sign by the query string
                     fts:score ?score ;
                     fts:result ?resultText ;
-                    fts:limit $limit ;
+                    # fts:limit 10 ;
             }
             OPTIONAL{
                   ?birth pdc:broughtIntoLife ?person;
@@ -111,6 +113,8 @@
 
             }
         }
+        order by desc(?score)
+        limit $limit
 
     ''',
 
