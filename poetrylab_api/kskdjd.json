@@ -1,0 +1,78 @@
+{
+  "head": {
+    "vars": [
+      "work",
+      "title",
+      "creator",
+      "date"
+    ]
+  },
+  "results": {
+    "bindings": [
+      {
+        "creator": {
+          "type": "literal",
+          "value": "Juana Inés de la Cruz",
+          "xml:lang": "es"
+        },
+        "title": {
+          "type": "literal",
+          "value": "A estos peñascos rudos",
+          "xml:lang": "es"
+        },
+        "work": {
+          "type": "uri",
+          "value": "http://postdata.linhd.uned.es/resource/pw_juana-ines-de-la-cruz_a-estos-penascos-rudos"
+        }
+      },
+      {
+        "creator": {
+          "type": "literal",
+          "value": "Antonio Enríquez Gómez",
+          "xml:lang": "es"
+        },
+        "title": {
+          "type": "literal",
+          "value": "Al son de este arroyuelo, cüyo ronco",
+          "xml:lang": "es"
+        },
+        "work": {
+          "type": "uri",
+          "value": "http://postdata.linhd.uned.es/resource/pw_antonio-enriquez-gomez_al-son-de-este-arroyuelo-cuyo-ronco"
+        }
+      },
+      {
+        "creator": {
+          "type": "literal",
+          "value": "Juana Inés de la Cruz",
+          "xml:lang": "es"
+        },
+        "title": {
+          "type": "literal",
+          "value": "Amado dueño mío",
+          "xml:lang": "es"
+        },
+        "work": {
+          "type": "uri",
+          "value": "http://postdata.linhd.uned.es/resource/pw_juana-ines-de-la-cruz_amado-dueno-mio"
+        }
+      },
+      {
+        "creator": {
+          "type": "literal",
+          "value": "Juana Inés de la Cruz",
+          "xml:lang": "es"
+        },
+        "title": {
+          "type": "literal",
+          "value": "Amante dulce del alma",
+          "xml:lang": "es"
+        },
+        "work": {
+          "type": "uri",
+          "value": "http://postdata.linhd.uned.es/resource/pw_juana-ines-de-la-cruz_amante-dulce-del-alma"
+        }
+      }
+    ]
+  }
+}

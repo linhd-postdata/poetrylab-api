@@ -9,16 +9,22 @@ from flask import Response
 from jollyjumper.core import get_enjambment
 from rantanplan.core import get_scansion
 
-from .addons import is_available, perform
-from .serializers import serialize
+# from .addons import is_available, perform
+# from .serializers import serialize
 from urllib.parse import unquote
+
+from os import listdir, getcwd
+from os.path import isfile, join
+import ast
+import json
 
 # load_pipeline should work as a "singleton"
 _load_pipeline = {}
 
 dumb_mode = True
-dumb_query = 'select * { ?a ?p ?o }'
-
+with open('poetrylab_api/queries.txt') as f:
+    queries = f.read()
+    queries = ast.literal_eval(queries)
 
 def get_analysis(poem, operations, rhyme_analysis=False):
     """
@@ -99,71 +105,63 @@ def get_poeticWorks():
     if dumb_mode:
         create_dumb_database()
     conn, admin, database_name = conntect_to_database()
-    query = dumb_query
+    query = queries['poeticWorks']
     results = conn.select(query, content_type=stardog.content_types.SPARQL_JSON)
     return results
 
 
-def get_poeticWork(title):
+def get_poeticWork(title, limit=10):
     title = unquote(title)
     if dumb_mode:
         create_dumb_database()
     conn, admin, database_name = conntect_to_database()
-    query = dumb_query
-    results = conn.select(query, content_type=stardog.content_types.SPARQL_JSON)
-    return results
+    query = queries['poeticWork'].replace('$*', title + '*').replace('$limit', str(limit))
+    results = conn.graph(query, content_type=stardog.content_types.LD_JSON)
+    return process_jsonld(results)
+
 
 def get_authors():
     if dumb_mode:
         create_dumb_database()
     conn, admin, database_name = conntect_to_database()
-    query = dumb_query
+    query = queries['authors']
     results = conn.select(query, content_type=stardog.content_types.SPARQL_JSON)
     return results
 
-def get_author(name):
+
+def get_author(name, limit=10):
     name = unquote(name)
     if dumb_mode:
         create_dumb_database()
     conn, admin, database_name = conntect_to_database()
-    query = dumb_query
-    results = conn.select(query, content_type=stardog.content_types.SPARQL_JSON)
-    return results
+    query = queries['author'].replace('$*', name + '*').replace('$limit', str(limit))
+    results = conn.graph(query, content_type=stardog.content_types.LD_JSON)
+    return process_jsonld(results)
 
 def get_manifestations():
-    if dumb_mode:
-        create_dumb_database()
-    conn, admin, database_name = conntect_to_database()
-    query = dumb_query
-    results = conn.select(query, content_type=stardog.content_types.SPARQL_JSON)
-    return results
-
-
-def get_redaction(name):
-    name = unquote(name)
-    if dumb_mode:
-        create_dumb_database()
-    conn, admin, database_name = conntect_to_database()
-    query = dumb_query
-    results = conn.select(query, content_type=stardog.content_types.SPARQL_JSON)
-    return results
-
+    # if dumb_mode:
+    #     create_dumb_database()
+    # conn, admin, database_name = conntect_to_database()
+    # query = queries['manifestations']
+    # results = conn.select(query, content_type=stardog.content_types.SPARQL_JSON)
+    # return results
+    return {'TODO': 'TODO'}
 
 def get_book(title):
-    title = unquote(title)
-    if dumb_mode:
-        create_dumb_database()
-    conn, admin, database_name = conntect_to_database()
-    query = dumb_query
-    results = conn.select(query, content_type=stardog.content_types.SPARQL_JSON)
-    return results
-
+    # title = unquote(title)
+    # if dumb_mode:
+    #     create_dumb_database()
+    # conn, admin, database_name = conntect_to_database()
+    # query = queries['book']
+    # results = conn.graph(query, content_type=stardog.content_types.LD_JSON)
+    # return process_jsonld(results)
+    return {'TODO': '?'}
 
 def conntect_to_database():
     connection_details = {
         'endpoint': 'http://localhost:5820',
         'username': 'admin',
-        'password': 'admin'
+        'password': 'admin',
     }
     database_name = "test_database"
     with stardog.Admin(**connection_details) as admin:
@@ -182,10 +180,18 @@ def create_dumb_database():
     with stardog.Admin(**connection_details) as admin:
         if database_name in [db.name for db in admin.databases()]:
             admin.database(database_name).drop()
-        db = admin.new_database(database_name)
+        db = admin.new_database(database_name, {'search.enabled': True})
 
         conn = stardog.Connection(database_name, **connection_details)
         conn.begin()
-        conn.add(stardog.content.File('poetrylab_api/example.ttl'))
+        poems_path = 'poetrylab_api/poems'
+        poems = [join(poems_path, f) for f in listdir(poems_path) if isfile(join(poems_path, f))]
+        for file in poems:
+            conn.add(stardog.content.File(file))
         conn.commit()  # commit the transaction
         conn.__exit__()
+
+def process_jsonld(results):
+    results = results.decode('utf8').replace("'", '"')
+    return json.loads(results)
+

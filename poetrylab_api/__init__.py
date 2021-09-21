@@ -6,6 +6,4 @@ from .core import get_authors  # noqa
 from .core import get_author  # noqa
 from .core import get_manifestations  # noqa
 from .core import get_book  # noqa
-from .core import get_redaction  # noqa
-
 from .app import app  # noqa
